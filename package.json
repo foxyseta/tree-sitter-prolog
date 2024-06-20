@@ -3,15 +3,26 @@
   "version": "1.1.0",
   "description": "Tree Sitter Prolog",
   "main": "bindings/node",
+  "types": "bindings/node",
   "scripts": {
     "build": "tree-sitter generate && prebuildify --napi --electron-compat && prebuildify --napi --electron-compat --platform=windows",
     "install": "node-gyp-build",
-    "test": "tree-sitter test && tree-sitter parse examples/*.pl --quiet --time"
+    "test": "tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
+    "prebuildify": "prebuildify --napi --strip"
   },
   "author": "theproros@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "nan": "^2.18.0"
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
   },
   "tree-sitter": [
     {
@@ -23,6 +34,15 @@
     }
   ],
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.8"
-  }
+    "tree-sitter-cli": "^0.20.8",
+    "prebuildify": "^6.0.0"
+  },
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ]
 }
