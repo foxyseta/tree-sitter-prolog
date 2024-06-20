@@ -1,0 +1,13 @@
+steps:
+  test:
+    when:
+      - event: push
+        branch: main
+      - event: pull_request
+        branch: main
+    image: gplane/pnpm
+    commands:
+      - pnpm i
+      - pnpm run build
+      - if [[ -z $(git status --porcelain) ]]; then exit 1; fi
+      - pnpm run test
