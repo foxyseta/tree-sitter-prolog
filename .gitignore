@@ -1,8 +1,6 @@
-Cargo.toml
-Makefile
-Package.swift
-binding.gyp
-bindings/
-pyproject.toml
-setup.py
-src/
+Cargo.lock
+node_modules
+build
+package-lock.json
+prebuilds
+/target/
