@@ -18,4 +18,8 @@ steps:
         branch: main
     image: bitnami/git
     commands:
-      - if [ "$(git status --porcelain)" ]; then exit 1; fi
+      - |
+        if [ "$(git status --porcelain)" ]; then
+          git status --porcelain
+          exit 1
+        fi
