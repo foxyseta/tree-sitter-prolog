@@ -5,9 +5,8 @@ steps:
         branch: main
       - event: pull_request
         branch: main
-    image: gplane/pnpm
+    image: unafterthought/tree-sitter
     commands:
-      - pnpm i
-      - pnpm run build
-      - if [[ -z $(git status --porcelain) ]]; then exit 1; fi
-      - pnpm run test
+      - tree-sitter generate
+      - if [ "$(git status --porcelain)" ]; then exit 1; fi
+      - tree-sitter test && tree-sitter parse examples/*.pl --quiet --time
