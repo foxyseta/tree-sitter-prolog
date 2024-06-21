@@ -20,6 +20,10 @@
           "named": true
         },
         {
+          "type": "dict",
+          "named": true
+        },
+        {
           "type": "variable",
           "named": true
         }
@@ -311,6 +315,10 @@
         },
         {
           "type": "compound_term",
+          "named": true
+        },
+        {
+          "type": "dict",
           "named": true
         },
         {

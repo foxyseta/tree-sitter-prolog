@@ -180,10 +180,13 @@ module.exports = grammar({
     )),
 
     _arg_term: $ => prec(2, choice(
+      'true',
+      'false',
       $.atomic,
       $.variable,
       alias($._compound_term_arg, $.compound_term),
-      $.bracketed_term
+      $.bracketed_term,
+      $.dict
     )),
 
     bracketed_term: $ => seq(
