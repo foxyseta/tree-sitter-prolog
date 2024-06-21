@@ -5,7 +5,7 @@ steps:
         branch: main
       - event: pull_request
         branch: main
-    image: renjisann/docker-tree-sitter:0.0.1
+    image: codeberg.org/foxy/tree-sitter:latest
     commands:
       - tree-sitter init-config
       - tree-sitter generate
