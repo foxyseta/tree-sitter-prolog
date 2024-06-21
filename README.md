@@ -1,6 +1,6 @@
 # tree-sitter-prolog
 
-![Pipeline status](https://ci.codeberg.org/api/badges/13456/status.svg)
+[![status-badge](https://ci.codeberg.org/api/badges/13456/status.svg)](https://ci.codeberg.org/repos/13456)
 
 Prolog grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
