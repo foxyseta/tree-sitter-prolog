@@ -5,7 +5,7 @@ steps:
         branch: main
       - event: pull_request
         branch: main
-    image: unafterthought/tree-sitter:0.0.1
+    image: renjisann/docker-tree-sitter:0.0.1
     commands:
       - tree-sitter generate
       - if [ "$(git status --porcelain)" ]; then exit 1; fi
