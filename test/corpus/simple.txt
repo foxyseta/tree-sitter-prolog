@@ -1,0 +1,71 @@
+==================
+Clause 1
+==================
+
+test_predicate.
+
+---
+
+(source_file
+  (clause_term
+    (term
+      (atomic_term
+        (atom)))))
+
+==================
+Clause 2
+==================
+
+test_predicate:-
+  true.
+
+---
+
+(source_file
+  (clause_term
+    (term
+      (compound_term
+        infix: (infix_operator
+          left: (term
+            (atomic_term
+              (atom)))
+          right: (term
+            (compound_term
+              prefix: (prefix_operator
+                right: (term
+                  (atomic_term
+                    (atom)))))))))))
+
+====================
+DCG
+====================
+
+test_dcg -->
+  true.
+
+---
+
+(source_file
+  (clause_term
+    (compound_term
+      (infix_operator
+        (atomic
+          (atom))
+        (operator)
+        (atomic
+          (atom))))
+    (end)))
+
+====================
+Directive
+====================
+
+:-test_predicate.
+
+---
+
+(source_file
+  (directive_term
+    (term
+      (atomic_term
+        (atom)))))
