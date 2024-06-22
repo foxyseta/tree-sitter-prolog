@@ -65,7 +65,10 @@ Directive
 ---
 
 (source_file
-  (directive_term
+  (clause_term
     (term
-      (atomic_term
-        (atom)))))
+      (compound_term
+        (prefix_operator
+          (term
+            (atomic_term
+              (atom))))))))
