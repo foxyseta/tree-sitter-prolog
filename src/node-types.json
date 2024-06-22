@@ -93,28 +93,7 @@
   {
     "type": "compound_term",
     "named": true,
-    "fields": {
-      "infix": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "infix_operator",
-            "named": true
-          }
-        ]
-      },
-      "prefix": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "prefix_operator",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": false,
@@ -129,6 +108,10 @@
         },
         {
           "type": "atom",
+          "named": true
+        },
+        {
+          "type": "term",
           "named": true
         }
       ]
@@ -150,32 +133,6 @@
     }
   },
   {
-    "type": "infix_operator",
-    "named": true,
-    "fields": {
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "term",
-            "named": true
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "term",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "negative_number",
     "named": true,
     "fields": {}
@@ -184,22 +141,6 @@
     "type": "number",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "prefix_operator",
-    "named": true,
-    "fields": {
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "term",
-            "named": true
-          }
-        ]
-      }
-    }
   },
   {
     "type": "source_file",
@@ -260,10 +201,6 @@
     "named": false
   },
   {
-    "type": "$",
-    "named": false
-  },
-  {
     "type": "%",
     "named": false
   },
@@ -280,23 +217,11 @@
     "named": false
   },
   {
-    "type": "*",
-    "named": false
-  },
-  {
     "type": "**",
     "named": false
   },
   {
-    "type": "*->",
-    "named": false
-  },
-  {
     "type": "*/",
-    "named": false
-  },
-  {
-    "type": "+",
     "named": false
   },
   {
@@ -308,10 +233,6 @@
     "named": false
   },
   {
-    "type": "-->",
-    "named": false
-  },
-  {
     "type": "->",
     "named": false
   },
@@ -320,27 +241,7 @@
     "named": false
   },
   {
-    "type": "/",
-    "named": false
-  },
-  {
     "type": "/*",
-    "named": false
-  },
-  {
-    "type": "/+",
-    "named": false
-  },
-  {
-    "type": "//",
-    "named": false
-  },
-  {
-    "type": "/\\",
-    "named": false
-  },
-  {
-    "type": ":",
     "named": false
   },
   {
@@ -348,95 +249,7 @@
     "named": false
   },
   {
-    "type": "::",
-    "named": false
-  },
-  {
-    "type": ":<",
-    "named": false
-  },
-  {
-    "type": ":=",
-    "named": false
-  },
-  {
     "type": ";",
-    "named": false
-  },
-  {
-    "type": "<",
-    "named": false
-  },
-  {
-    "type": "<<",
-    "named": false
-  },
-  {
-    "type": "=",
-    "named": false
-  },
-  {
-    "type": "=..",
-    "named": false
-  },
-  {
-    "type": "=:=",
-    "named": false
-  },
-  {
-    "type": "=<",
-    "named": false
-  },
-  {
-    "type": "==",
-    "named": false
-  },
-  {
-    "type": "=@=",
-    "named": false
-  },
-  {
-    "type": "=\\=",
-    "named": false
-  },
-  {
-    "type": ">",
-    "named": false
-  },
-  {
-    "type": ">:<",
-    "named": false
-  },
-  {
-    "type": ">=",
-    "named": false
-  },
-  {
-    "type": ">>",
-    "named": false
-  },
-  {
-    "type": "?",
-    "named": false
-  },
-  {
-    "type": "?-",
-    "named": false
-  },
-  {
-    "type": "@<",
-    "named": false
-  },
-  {
-    "type": "@=<",
-    "named": false
-  },
-  {
-    "type": "@>",
-    "named": false
-  },
-  {
-    "type": "@>=",
     "named": false
   },
   {
@@ -449,22 +262,6 @@
   },
   {
     "type": "\\+",
-    "named": false
-  },
-  {
-    "type": "\\/",
-    "named": false
-  },
-  {
-    "type": "\\=",
-    "named": false
-  },
-  {
-    "type": "\\==",
-    "named": false
-  },
-  {
-    "type": "\\=@=",
     "named": false
   },
   {
@@ -484,31 +281,15 @@
     "named": false
   },
   {
+    "type": "`,`",
+    "named": false
+  },
+  {
     "type": "a",
     "named": false
   },
   {
-    "type": "as",
-    "named": false
-  },
-  {
     "type": "b",
-    "named": false
-  },
-  {
-    "type": "directive",
-    "named": false
-  },
-  {
-    "type": "discontiguous",
-    "named": false
-  },
-  {
-    "type": "div",
-    "named": false
-  },
-  {
-    "type": "dynamic",
     "named": false
   },
   {
@@ -524,35 +305,7 @@
     "named": false
   },
   {
-    "type": "initialization",
-    "named": false
-  },
-  {
-    "type": "is",
-    "named": false
-  },
-  {
-    "type": "meta_predicate",
-    "named": false
-  },
-  {
-    "type": "mod",
-    "named": false
-  },
-  {
-    "type": "module_transparent",
-    "named": false
-  },
-  {
-    "type": "multifile",
-    "named": false
-  },
-  {
     "type": "n",
-    "named": false
-  },
-  {
-    "type": "public",
     "named": false
   },
   {
@@ -560,23 +313,7 @@
     "named": false
   },
   {
-    "type": "rdiv",
-    "named": false
-  },
-  {
-    "type": "rem",
-    "named": false
-  },
-  {
     "type": "t",
-    "named": false
-  },
-  {
-    "type": "thread_initialization",
-    "named": false
-  },
-  {
-    "type": "thread_local",
     "named": false
   },
   {
@@ -584,19 +321,7 @@
     "named": false
   },
   {
-    "type": "volatile",
-    "named": false
-  },
-  {
-    "type": "volitile",
-    "named": false
-  },
-  {
     "type": "x",
-    "named": false
-  },
-  {
-    "type": "xor",
     "named": false
   },
   {

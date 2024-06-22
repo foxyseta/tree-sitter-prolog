@@ -4,156 +4,8 @@
  * Standardization, Geneva."
  */
 
-const precedence = {
-    clause: 1201, // xfx
-    dcg: 1200, // xfx
-
-    directive: 1201, // fx
-    qh_operator: 1200, // fx
-
-    dynamic: 1150, // fx
-    discontiguous: 1150, // fx
-    initialization: 1150, // fx
-    meta_predicate: 1150, // fx
-    module_transparent: 1150, // fx
-    multifile: 1150, // fx
-    public: 1150, // fx
-    thread_local: 1150, // fx
-    thread_initialization: 1150, // fx
-    volitile: 1150, // fx
-
-    list_sperator: 1105, // xfy
-
-    disjunction: 1100, // xfy
-
-    implies: 1050, // xfy
-    soft_cut_implies: 1050, // xfy
-
-    conjunction: 1000, // xfy
-
-    colon_equals: 990, // xfx
-
-    negation: 900, // fy
-
-    less_than: 700, // xfx
-    assign: 700, // xfx
-    univ: 700, // xfx
-    compund_equals: 700, // xfx
-    compund_not_equals: 700, // xfx
-    equation_equals: 700, // xfx
-    less_than_equals: 700, // xfx
-    equals: 700, // xfx
-    equation_not_equals: 700, // xfx
-    greater_than: 700, // xfx
-    greater_than_equals: 700, // xfx
-    compound_less_than: 700, // xfx
-    compound_less_than_equals: 700, // xfx
-    compound_greater_than: 700, // xfx
-    compound_greater_than_equals: 700, // xfx
-    not_assigned: 700, // xfx
-    not_equals: 700, // xfx
-    as: 700, // xfx
-    is: 700, // xfx
-    partial_unification_dict: 700, // xfx
-    sub_dict: 700, // xfx
-    cql_table: 700, // xfx
-
-    coloun: 600, // xfy
-    addition: 500, // yfx
-    subtraction: 500, // yfx
-    bitwise_or: 500, // yfx
-    bitwise_and: 500, // yfx
-    bitwise_xor: 500, // yfx
-
-    question_mark: 500, // fx
-
-    multipcation: 400, // yfx
-    divistion: 400, // yfx
-    integer_division: 400, // yfx
-    div: 400, // yfx
-    rdiv: 400, // yfx
-    bitwise_shift_left: 400, // yfx
-    bitwise_shift_right: 400, // yfx
-    mod: 400, // yfx
-    rem: 400, // yfx
-
-    exponentiation_float: 200, // xfx
-
-    exponentiation: 200, // xfy
-
-    bitwise_negation: 200, // fy
-    positive: 200, // fy
-    negative: 200, // fy
-
-    dict_inspection: 100, // yfx
-
-    remander_deterministic: 1, // fx
-  },
-  ops = [
-    "-->",
-    "?-",
-    "dynamic",
-    "discontiguous",
-    "initialization",
-    "meta_predicate",
-    "module_transparent",
-    "multifile",
-    "public",
-    "thread_local",
-    "thread_initialization",
-    "volatile",
-    "|",
-    ";",
-    "->",
-    "*->",
-    // No ','
-    ":=",
-    "\\+",
-    "<",
-    "=",
-    "=..",
-    "=@=",
-    "\\=@=",
-    "=:=",
-    "=<",
-    "==",
-    "=\\=",
-    ">",
-    ">=",
-    "@<",
-    "@=<",
-    "@>",
-    "@>=",
-    "\\=",
-    "\\==",
-    "as",
-    "is",
-    ">:<",
-    ":<",
-    ":",
-    "+",
-    "-",
-    "/\\",
-    "\\/",
-    "xor",
-    "?",
-    "*",
-    "/",
-    "//",
-    "div",
-    "rdiv",
-    "<<",
-    ">>",
-    "mod",
-    "rem",
-    "**",
-    "^",
-    "\\",
-    ".",
-    "$",
-  ],
-  // 6.5.1 Graphic character
-  graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
+const // 6.5.1 Graphic character
+graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   // 6.5.2 Alphanumeric characters
   small_letter_char = /[a-z]/,
   capital_letter_char = /[A-Z]/,
@@ -527,10 +379,6 @@ module.exports = grammar({
     "\r",
     comment,
   ],
-  conflicts: $ => [
-    [$.infix_operator, $.infix_operator],
-    [$.infix_operator, $._prefix_non_associative],
-  ],
   superTypes: $ => [
     $.term,
     variable,
@@ -558,7 +406,7 @@ module.exports = grammar({
     // 6.2.1.2 Clauses
     clause_term: $ =>
       prec(
-        precedence.clause,
+        0,
         seq(
           $.term,
           end,
@@ -640,11 +488,139 @@ module.exports = grammar({
         ),
       ),
     // 6.3.4 Compound terms - operator notation
+    // 6.3.4.1 Operand
+    // 6.3.4.2 Operators as functors
     _operator_notation: $ =>
       choice(
-        $._prefix_notation,
-        $._infix_notation,
-        $._postfix_notation,
+        seq(
+          open,
+          $.term,
+          close,
+        ),
+        seq(
+          open_ct,
+          $.term,
+          close,
+        ),
+        // Treesitter/Prolog ISO precedences are inverted.
+        // Non-associative operators are set to left-associative
+        $._operation_1200xfx,
+        $._operation_1200fx,
+        $._operation_1100xfy,
+        $._operation_1050xfy,
+        $._operation_1000xfy,
+        $._operation_900fy,
+        $._operation_700xfx,
+        $._operation_500yfx,
+        $._operation_400yfx,
+        $._operation_200xfx,
+        $._operation_200xfy,
+        $._operation_200fy
+      ),
+    _operation_1200xfx: $ =>
+      prec.left(
+        1,
+        seq(
+          $.term,
+          /(:-)|(-->)/,
+          $.term,
+        ),
+      ),
+    _operation_1200fx: $ =>
+      prec.left(
+        1,
+        seq(
+          /(:-)|(\?-)/,
+          $.term,
+        ),
+      ),
+    _operation_1100xfy: $ =>
+      prec.right(
+        101,
+        seq(
+          $.term,
+          ";",
+          $.term,
+        ),
+      ),
+    _operation_1050xfy: $ =>
+      prec.right(
+        151,
+        seq(
+          $.term,
+          "->",
+          $.term,
+        ),
+      ),
+    _operation_1000xfy: $ =>
+      prec.right(
+        201,
+        seq(
+          $.term,
+          choice("`,`", comma),
+          $.term,
+        ),
+      ),
+    _operation_900fy: $ =>
+      prec.right(
+        301,
+        seq(
+          "\\+",
+          $.term,
+        ),
+      ),
+    _operation_700xfx: $ =>
+      prec.left(
+        501,
+        seq(
+          $.term,
+          /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/,
+          $.term,
+        ),
+      ),
+    _operation_500yfx: $ =>
+      prec.left(
+        701,
+        seq(
+          $.term,
+          /\+|\-|\/\\|\\\//,
+          $.term,
+        ),
+      ),
+    _operation_400yfx: $ =>
+      prec.left(
+        801,
+        seq(
+          $.term,
+          /\*|\/|\/\/|rem|mod|<<|>>/,
+          $.term,
+        ),
+      ),
+    _operation_200xfx: $ =>
+      prec.left(
+        1001,
+        seq(
+          $.term,
+          "**",
+          $.term,
+        ),
+      ),
+    _operation_200xfy: $ =>
+      prec.right(
+        1001,
+        seq(
+          $.term,
+          "^",
+          $.term,
+        ),
+      ),
+    _operation_200fy: $ =>
+      prec.right(
+        1001,
+        seq(
+          /\-\\/,
+          $.term,
+        ),
       ),
     // 6.3.5 Compound terms - list notation
     _list_notation: $ =>
@@ -671,152 +647,5 @@ module.exports = grammar({
         $.term,
         close_curly,
       ),
-    _prefix_notation: $ =>
-      field(
-        "prefix",
-        alias(
-          choice(
-            // Define prefx notation`
-            $._prefix_non_associative, // fx
-            $._prefix_right_associative, // fy
-          ),
-          $.prefix_operator,
-        ),
-      ),
-    _infix_notation: $ => (
-      // Define infix notation
-      field("infix", $.infix_operator)
-    ),
-    _postfix_notation: $ =>
-      field(
-        "postfix",
-        alias(
-          choice(
-            // Define postfix notation
-            // Need dynamic defintion of operators
-            // $._postfix_non_associative,         // xf
-            // $._postfix_left_associative         // yf
-          ),
-          $.postfix_operator,
-        ),
-      ),
-    infix_operator: $ => { // xfx
-      const table = [
-        // [prec, precedence.clause, ':-'], // xfx
-        [prec, precedence.dcg, "-->"], // xfx
-        [prec.right, precedence.list_sperator, "|"], // xfy
-        [prec.right, precedence.disjunction, ";"], // xfy
-        [prec.right, precedence.implies, "->"], // xfy
-        [prec.right, precedence.soft_cut_implies, "*->"], // xfy
-        [prec, precedence.colon_equals, ":="], // xfx
-        [prec, precedence.less_than, "<"], // xfx
-        [prec, precedence.assign, "="], // xfx
-        [prec, precedence.univ, "=.."], // xfx
-        [prec, precedence.compund_equals, "=@="], // xfx
-        [prec, precedence.compund_not_equals, "\\=@="], // xfx
-        [prec, precedence.equation_equals, "=:="], // xfx
-        [prec, precedence.less_than_equals, "=<"], // xfx
-        [prec, precedence.equals, "=="], // xfx
-        [prec, precedence.equation_not_equals, "=\\="], // xfx
-        [prec, precedence.greater_than, ">"], // xfx
-        [prec, precedence.greater_than_equals, ">="], // xfx
-        [prec, precedence.compound_less_than, "@<"], // xfx
-        [prec, precedence.compound_less_than_equals, "@=<"], // xfx
-        [prec, precedence.compound_greater_than, "@>"], // xfx
-        [prec, precedence.compound_greater_than_equals, "@>="], // xfx
-        [prec, precedence.not_assigned, "\\="], // xfx
-        [prec, precedence.not_equals, "\\=="], // xfx
-        [prec, precedence.as, "as"], // xfx
-        [prec, precedence.is, "is"], // xfx
-        [prec, precedence.partial_unification_dict, ">:<"], // xfx
-        [prec, precedence.sub_dict, ":<"], // xfx
-        [prec, precedence.cql_table, "::"], // xfx
-        [prec.right, precedence.coloun, ":"], // xfy
-        [prec.left, precedence.addition, "+"], // yfx
-        [prec.left, precedence.subtraction, "-"], // yfx
-        [prec.left, precedence.bitwise_or, "\\/"], // yfx
-        [prec.left, precedence.bitwise_and, "/\\"], // yfx
-        [prec.left, precedence.bitwise_xor, "xor"], // yfx
-        [prec.left, precedence.multipcation, "*"], // yfx
-        [prec.left, precedence.divistion, "/"], // yfx
-        [prec.left, precedence.integer_division, "//"], // yfx
-        [prec.left, precedence.div, "div"], // yfx
-        [prec.left, precedence.rdiv, "rdiv"], // yfx
-        [prec.left, precedence.bitwise_shift_left, "<<"], // yfx
-        [prec.left, precedence.bitwise_shift_right, ">>"], // yfx
-        [prec.left, precedence.mod, "mod"], // yfx
-        [prec.left, precedence.rem, "rem"], // yfx
-        [prec, precedence.exponentiation_float, "**"], // xfx
-        [prec.right, precedence.exponentiation, "^"], // xfy
-        [prec.left, precedence.dict_inspection, "."], // yfx
-      ];
-      return choice(...table.map(([fn, precedence, operator]) =>
-        fn(
-          precedence,
-          seq(
-            field("left", $.term),
-            operator,
-            field("right", $.term),
-          ),
-        )
-      ));
-    },
-    _non_arg_operator: $ =>
-      prec.right(
-        precedence.conjunction,
-        seq(
-          field("left", $.term),
-          ",",
-          field("right", $.term),
-        ),
-      ),
-    _prefix_non_associative: $ => {
-      const table = [
-        [precedence.dynamic, "dynamic"],
-        [precedence.discontiguous, "discontiguous"], // fx
-        [precedence.initialization, "initialization"], // fx
-        [precedence.meta_predicate, "meta_predicate"], // fx
-        [precedence.module_transparent, "module_transparent"], // fx
-        [precedence.multifile, "multifile"], // fx
-        [precedence.public, "public"], // fx
-        [precedence.thread_local, "thread_local"], // fx
-        [precedence.thread_initialization, "thread_initialization"], // fx
-        [precedence.volitile, "volitile"],
-        [precedence.directive, "directive"],
-        [precedence.qh_operator, "?-"],
-        [precedence.directive, ':-'], // fx
-        [precedence.question_mark, "?"],
-        [precedence.remander_deterministic, "$"], // fx
-      ];
-      return choice(...table.map(([precedence, operator]) =>
-        prec(
-          precedence,
-          seq(
-            operator,
-            field("right", $.term),
-          ),
-        )
-      ));
-    },
-    _prefix_right_associative: $ => {
-      const table = [
-        [precedence.negation, "/+"], // fy
-        [precedence.bitwise_negation, "/"], // fy
-        [precedence.positive, "+"], // fy
-        [precedence.negative, "-"], // fy
-      ];
-      return choice(...table.map(([precedence, operator]) =>
-        prec.right(
-          precedence,
-          seq(
-            operator,
-            field("right", $.term),
-          ),
-        )
-      ));
-    },
-    _operator_pred_list: $ => {
-      return choice(...ops.map((op) => op));
-    },
   },
 });

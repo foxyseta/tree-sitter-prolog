@@ -25,16 +25,12 @@ test_predicate:-
   (clause_term
     (term
       (compound_term
-        infix: (infix_operator
-          left: (term
-            (atomic_term
-              (atom)))
-          right: (term
-            (compound_term
-              prefix: (prefix_operator
-                right: (term
-                  (atomic_term
-                    (atom)))))))))))
+        (term
+          (atomic_term
+            (atom)))
+        (term
+          (atomic_term
+            (atom)))))))
 
 ====================
 DCG
@@ -65,10 +61,7 @@ Directive
 ---
 
 (source_file
-  (clause_term
+  (directive_term
     (term
-      (compound_term
-        (prefix_operator
-          (term
-            (atomic_term
-              (atom))))))))
+      (atomic_term
+        (atom)))))
