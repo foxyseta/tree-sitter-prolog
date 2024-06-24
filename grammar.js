@@ -87,7 +87,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   single_line_comment = seq(
     end_line_comment_char,
     comment_text,
-    new_line_char,
+    optional(new_line_char),
   ),
   bracketed_comment = seq(
     comment_open,
