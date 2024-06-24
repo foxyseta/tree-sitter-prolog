@@ -98,7 +98,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
     comment_text,
     comment_close,
   )),
-  comment = choice(single_line_comment, bracketed_comment),
+  comment = token(choice(single_line_comment, bracketed_comment)),
   // 6.4.2.1 Quoted characters
   meta_escape_sequence = seq(
     backslash_char,
