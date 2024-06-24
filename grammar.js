@@ -55,6 +55,11 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   space_char = " ",
   horizontal_tab_char = "\t",
   new_line_char = "\n",
+  /* resonable assumption: there are no NULL characters within the file. Use
+   * eof() instead once https://github.com/tree-sitter/tree-sitter/pull/2488 is
+   * in production (tree-sitter v0.23).
+   */
+  end_of_file_char = "\0",
   layout_char = choice(
     space_char,
     horizontal_tab_char,
@@ -82,30 +87,18 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   // 6.4.1 Layout text
   comment_open = "/*",
   comment_close = "*/",
-  // rules matching empty text are unsupported by tree-siter
-  comment_text = repeat1(char),
-  single_line_comment = seq(
+  comment_text = repeat(char),
+  single_line_comment = token(seq(
     end_line_comment_char,
     comment_text,
-    optional(new_line_char),
-  ),
-  bracketed_comment = seq(
+    choice(new_line_char, end_of_file_char),
+  )),
+  bracketed_comment = token(seq(
     comment_open,
     comment_text,
     comment_close,
-  ),
-  comment = prec(
-    1,
-    choice(
-      single_line_comment,
-      bracketed_comment,
-    ),
-  ),
-  layout_text = choice(
-    layout_char,
-    comment,
-  ),
-  layout_text_sequence = repeat1(layout_text),
+  )),
+  comment = choice(single_line_comment, bracketed_comment),
   // 6.4.2.1 Quoted characters
   meta_escape_sequence = seq(
     backslash_char,
@@ -269,8 +262,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   ),
   sign = choice(
     negative_sign_char,
-    // rules matching the empty string are unsupported by tree-sitter
-    positive_sign_char,
+    optional(positive_sign_char),
   ),
   exponent = seq(
     exponent_char,
@@ -331,8 +323,9 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
 
 module.exports = grammar({
   name: "prolog",
-  extras: _ => [
-    layout_text_sequence
+  extras: $ => [
+    layout_char,
+    comment,
   ],
   superTypes: $ => [
     $._term,
