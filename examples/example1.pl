@@ -1,3 +1,3 @@
-lag(?, f) :-
+lag(g, f) :-
     {[Test],
-      se :: [se_other_thing-Test]}.
+      [se_other_thing-Test]}.
