@@ -8,9 +8,7 @@ test_predicate.
 
 (source_file
   (clause_term
-    (term
-      (atomic_term
-        (atom)))))
+    (atom)))
 
 ==================
 Clause 2
@@ -23,34 +21,24 @@ test_predicate:-
 
 (source_file
   (clause_term
-    (term
-      (compound_term
-        (term
-          (atomic_term
-            (atom)))
-        (term
-          (atomic_term
-            (atom)))))))
+    (operation_1200xfx
+      (atom)
+      (atom))))
 
 ====================
 DCG
 ====================
 
-test_dcg -->
+test_dcg-->
   true.
 
 ---
 
 (source_file
   (clause_term
-    (compound_term
-      (infix_operator
-        (atomic
-          (atom))
-        (operator)
-        (atomic
-          (atom))))
-    (end)))
+    (operation_1200xfx
+      (atom)
+      (atom))))
 
 ====================
 Directive
@@ -62,6 +50,4 @@ Directive
 
 (source_file
   (directive_term
-    (term
-      (atomic_term
-        (atom)))))
+    (atom)))

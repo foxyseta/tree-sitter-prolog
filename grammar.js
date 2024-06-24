@@ -380,11 +380,7 @@ module.exports = grammar({
     comment,
   ],
   superTypes: $ => [
-    $.term,
-    variable,
-    $.compound_term,
-    $._curly_bracketed_notation,
-    end,
+    $._term,
   ],
   rules: {
     // 6.2 Prolog text and data
@@ -400,49 +396,47 @@ module.exports = grammar({
     directive_term: $ =>
       seq(
         ":-",
-        $.term,
+        $._term,
         end,
       ),
     // 6.2.1.2 Clauses
     clause_term: $ =>
       prec(
-        0,
+        1201,
         seq(
-          $.term,
+          $._term,
           end,
         ),
       ),
     // 6.3 Terms
-    term: $ =>
-      prec(
-        1,
-        choice(
-          $.atomic_term,
-          variable,
-          $.compound_term,
-        ),
-      ),
-    compound_term: $ =>
+    _term: $ =>
       choice(
-        $._functional_notation,
+        $._atomic_term,
+        $.variable_term,
+        $._compound_term,
+      ),
+    _compound_term: $ =>
+      choice(
+        $.functional_notation,
         $._operator_notation,
-        $._list_notation,
+        $.list_notation,
+        $.curly_bracketed_notation
       ),
     // 6.3.1 Atomic terms
-    atomic_term: $ =>
+    _atomic_term: $ =>
       choice(
-        $.number,
-        $.negative_number,
+        $._number,
+        $._negative_number,
         $.atom,
       ),
     // 6.3.1.1 Numbers
-    number: _ =>
+    _number: _ =>
       prec.left(choice(
         integer,
         float_number,
       )),
     // 6.3.1.2 Negative numbers
-    negative_number: _ =>
+    _negative_number: _ =>
       prec(
         200,
         seq(
@@ -456,14 +450,16 @@ module.exports = grammar({
     // 6.3.1.3 Atoms
     atom: $ =>
       choice(
-        name_token,
+        name,
         $.empty_list,
         $.empty_curly_brackets,
       ),
     empty_list: _ => token(seq(open_list, close_list)),
     empty_curly_brackets: _ => token(seq(open_curly, close_curly)),
+    // 6.3.2 Variables
+    variable_term: _ => variable,
     // 6.3.3 Compound terms - functional notation
-    _functional_notation: $ =>
+    functional_notation: $ =>
       seq(
         $.atom,
         open_ct,
@@ -472,19 +468,19 @@ module.exports = grammar({
       ),
     arg_list: $ =>
       prec.right(seq(
-        $.arg,
+        $._arg,
         repeat(seq(
           comma,
-          $.arg,
+          $._arg,
         )),
       )),
     // 6.3.3.1 Arguments
-    arg: $ =>
+    _arg: $ =>
       prec(
         999,
         choice(
           $.atom,
-          $.term,
+          $._term,
         ),
       ),
     // 6.3.4 Compound terms - operator notation
@@ -494,136 +490,136 @@ module.exports = grammar({
       choice(
         seq(
           open,
-          $.term,
+          $._term,
           close,
         ),
         seq(
           open_ct,
-          $.term,
+          $._term,
           close,
         ),
         // Treesitter/Prolog ISO precedences are inverted.
         // Non-associative operators are set to left-associative
-        $._operation_1200xfx,
-        $._operation_1200fx,
-        $._operation_1100xfy,
-        $._operation_1050xfy,
-        $._operation_1000xfy,
-        $._operation_900fy,
-        $._operation_700xfx,
-        $._operation_500yfx,
-        $._operation_400yfx,
-        $._operation_200xfx,
-        $._operation_200xfy,
-        $._operation_200fy
+        $.operation_1200xfx,
+        $.operation_1200fx,
+        $.operation_1100xfy,
+        $.operation_1050xfy,
+        $.operation_1000xfy,
+        $.operation_900fy,
+        $.operation_700xfx,
+        $.operation_500yfx,
+        $.operation_400yfx,
+        $.operation_200xfx,
+        $.operation_200xfy,
+        $.operation_200fy,
       ),
-    _operation_1200xfx: $ =>
+    operation_1200xfx: $ =>
       prec.left(
         1,
         seq(
-          $.term,
-          /(:-)|(-->)/,
-          $.term,
+          $._term,
+          /(:\-)|(\-\->)/,
+          $._term,
         ),
       ),
-    _operation_1200fx: $ =>
+    operation_1200fx: $ =>
       prec.left(
         1,
         seq(
-          /(:-)|(\?-)/,
-          $.term,
+          /(:\-)|(\?-)/,
+          $._term,
         ),
       ),
-    _operation_1100xfy: $ =>
+    operation_1100xfy: $ =>
       prec.right(
         101,
         seq(
-          $.term,
+          $._term,
           ";",
-          $.term,
+          $._term,
         ),
       ),
-    _operation_1050xfy: $ =>
+    operation_1050xfy: $ =>
       prec.right(
         151,
         seq(
-          $.term,
+          $._term,
           "->",
-          $.term,
+          $._term,
         ),
       ),
-    _operation_1000xfy: $ =>
+    operation_1000xfy: $ =>
       prec.right(
         201,
         seq(
-          $.term,
+          $._term,
           choice("`,`", comma),
-          $.term,
+          $._term,
         ),
       ),
-    _operation_900fy: $ =>
+    operation_900fy: $ =>
       prec.right(
         301,
         seq(
           "\\+",
-          $.term,
+          $._term,
         ),
       ),
-    _operation_700xfx: $ =>
+    operation_700xfx: $ =>
       prec.left(
         501,
         seq(
-          $.term,
+          $._term,
           /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/,
-          $.term,
+          $._term,
         ),
       ),
-    _operation_500yfx: $ =>
+    operation_500yfx: $ =>
       prec.left(
         701,
         seq(
-          $.term,
+          $._term,
           /\+|\-|\/\\|\\\//,
-          $.term,
+          $._term,
         ),
       ),
-    _operation_400yfx: $ =>
+    operation_400yfx: $ =>
       prec.left(
         801,
         seq(
-          $.term,
+          $._term,
           /\*|\/|\/\/|rem|mod|<<|>>/,
-          $.term,
+          $._term,
         ),
       ),
-    _operation_200xfx: $ =>
+    operation_200xfx: $ =>
       prec.left(
         1001,
         seq(
-          $.term,
+          $._term,
           "**",
-          $.term,
+          $._term,
         ),
       ),
-    _operation_200xfy: $ =>
+    operation_200xfy: $ =>
       prec.right(
         1001,
         seq(
-          $.term,
+          $._term,
           "^",
-          $.term,
+          $._term,
         ),
       ),
-    _operation_200fy: $ =>
+    operation_200fy: $ =>
       prec.right(
         1001,
         seq(
           /\-\\/,
-          $.term,
+          $._term,
         ),
       ),
     // 6.3.5 Compound terms - list notation
-    _list_notation: $ =>
+    list_notation: $ =>
       seq(
         open_list,
         $._list_notation_items,
@@ -632,19 +628,19 @@ module.exports = grammar({
     _list_notation_items: $ =>
       choice(
         prec.right(seq(
-          $.arg,
+          $._arg,
           repeat(seq(
             comma,
-            $.arg,
+            $._arg,
           )),
         )),
-        seq($.arg, ht_sep, $.arg),
+        seq($._arg, ht_sep, $._arg),
       ),
     // 6.3.6 Compount terms - curly bracketed forms
-    _curly_bracketed_notation: $ =>
+    curly_bracketed_notation: $ =>
       seq(
         open_curly,
-        $.term,
+        $._term,
         close_curly,
       ),
   },

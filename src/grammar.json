@@ -26,7 +26,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "term"
+          "name": "_term"
         },
         {
           "type": "SEQ",
@@ -369,13 +369,13 @@
     },
     "clause_term": {
       "type": "PREC",
-      "value": 0,
+      "value": 1201,
       "content": {
         "type": "SEQ",
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "SEQ",
@@ -717,465 +717,29 @@
         ]
       }
     },
-    "term": {
-      "type": "PREC",
-      "value": 1,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "atomic_term"
-          },
-          {
-            "type": "TOKEN",
-            "content": {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "REPEAT1",
-                      "content": {
-                        "type": "CHOICE",
-                        "members": [
-                          {
-                            "type": "CHOICE",
-                            "members": [
-                              {
-                                "type": "STRING",
-                                "value": " "
-                              },
-                              {
-                                "type": "STRING",
-                                "value": "\t"
-                              },
-                              {
-                                "type": "STRING",
-                                "value": "\n"
-                              }
-                            ]
-                          },
-                          {
-                            "type": "PREC",
-                            "value": 1,
-                            "content": {
-                              "type": "CHOICE",
-                              "members": [
-                                {
-                                  "type": "SEQ",
-                                  "members": [
-                                    {
-                                      "type": "STRING",
-                                      "value": "%"
-                                    },
-                                    {
-                                      "type": "REPEAT1",
-                                      "content": {
-                                        "type": "CHOICE",
-                                        "members": [
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "CHOICE",
-                                                "members": [
-                                                  {
-                                                    "type": "STRING",
-                                                    "value": "_"
-                                                  },
-                                                  {
-                                                    "type": "CHOICE",
-                                                    "members": [
-                                                      {
-                                                        "type": "PATTERN",
-                                                        "value": "[A-Z]"
-                                                      },
-                                                      {
-                                                        "type": "PATTERN",
-                                                        "value": "[a-z]"
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "type": "PATTERN",
-                                                "value": "[0-9]"
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "STRING",
-                                                "value": "!"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "("
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": ")"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": ","
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": ";"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "["
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "]"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "{"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "}"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "|"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "%"
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "STRING",
-                                                "value": " "
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "\t"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "\n"
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "STRING",
-                                                "value": "\\"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "'"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "\""
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "`"
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    {
-                                      "type": "STRING",
-                                      "value": "\n"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "SEQ",
-                                  "members": [
-                                    {
-                                      "type": "STRING",
-                                      "value": "/*"
-                                    },
-                                    {
-                                      "type": "REPEAT1",
-                                      "content": {
-                                        "type": "CHOICE",
-                                        "members": [
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "CHOICE",
-                                                "members": [
-                                                  {
-                                                    "type": "STRING",
-                                                    "value": "_"
-                                                  },
-                                                  {
-                                                    "type": "CHOICE",
-                                                    "members": [
-                                                      {
-                                                        "type": "PATTERN",
-                                                        "value": "[A-Z]"
-                                                      },
-                                                      {
-                                                        "type": "PATTERN",
-                                                        "value": "[a-z]"
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "type": "PATTERN",
-                                                "value": "[0-9]"
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "STRING",
-                                                "value": "!"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "("
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": ")"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": ","
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": ";"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "["
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "]"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "{"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "}"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "|"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "%"
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "STRING",
-                                                "value": " "
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "\t"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "\n"
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "type": "CHOICE",
-                                            "members": [
-                                              {
-                                                "type": "STRING",
-                                                "value": "\\"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "'"
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "\""
-                                              },
-                                              {
-                                                "type": "STRING",
-                                                "value": "`"
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    {
-                                      "type": "STRING",
-                                      "value": "*/"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
-                },
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "_"
-                    },
-                    {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "SEQ",
-                          "members": [
-                            {
-                              "type": "STRING",
-                              "value": "_"
-                            },
-                            {
-                              "type": "REPEAT1",
-                              "content": {
-                                "type": "CHOICE",
-                                "members": [
-                                  {
-                                    "type": "CHOICE",
-                                    "members": [
-                                      {
-                                        "type": "STRING",
-                                        "value": "_"
-                                      },
-                                      {
-                                        "type": "CHOICE",
-                                        "members": [
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "[A-Z]"
-                                          },
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "[a-z]"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "type": "PATTERN",
-                                    "value": "[0-9]"
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "SEQ",
-                          "members": [
-                            {
-                              "type": "PATTERN",
-                              "value": "[A-Z]"
-                            },
-                            {
-                              "type": "REPEAT",
-                              "content": {
-                                "type": "CHOICE",
-                                "members": [
-                                  {
-                                    "type": "CHOICE",
-                                    "members": [
-                                      {
-                                        "type": "STRING",
-                                        "value": "_"
-                                      },
-                                      {
-                                        "type": "CHOICE",
-                                        "members": [
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "[A-Z]"
-                                          },
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "[a-z]"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "type": "PATTERN",
-                                    "value": "[0-9]"
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "type": "SYMBOL",
-            "name": "compound_term"
-          }
-        ]
-      }
-    },
-    "compound_term": {
+    "_term": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_functional_notation"
+          "name": "_atomic_term"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "variable_term"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_compound_term"
+        }
+      ]
+    },
+    "_compound_term": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "functional_notation"
         },
         {
           "type": "SYMBOL",
@@ -1183,20 +747,24 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_list_notation"
+          "name": "list_notation"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "curly_bracketed_notation"
         }
       ]
     },
-    "atomic_term": {
+    "_atomic_term": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "number"
+          "name": "_number"
         },
         {
           "type": "SYMBOL",
-          "name": "negative_number"
+          "name": "_negative_number"
         },
         {
           "type": "SYMBOL",
@@ -1204,7 +772,7 @@
         }
       ]
     },
-    "number": {
+    "_number": {
       "type": "PREC_LEFT",
       "value": 0,
       "content": {
@@ -2044,7 +1612,7 @@
         ]
       }
     },
-    "negative_number": {
+    "_negative_number": {
       "type": "PREC",
       "value": 200,
       "content": {
@@ -2897,262 +2465,181 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "PATTERN",
-                  "value": "[a-z]"
-                },
-                {
-                  "type": "REPEAT",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "CHOICE",
-                        "members": [
-                          {
-                            "type": "STRING",
-                            "value": "_"
-                          },
-                          {
-                            "type": "CHOICE",
-                            "members": [
-                              {
-                                "type": "PATTERN",
-                                "value": "[A-Z]"
-                              },
-                              {
-                                "type": "PATTERN",
-                                "value": "[a-z]"
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "type": "PATTERN",
-                        "value": "[0-9]"
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            {
-              "type": "REPEAT1",
-              "content": {
+          "type": "TOKEN",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
                 "type": "CHOICE",
                 "members": [
                   {
-                    "type": "PATTERN",
-                    "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "\\"
-                  }
-                ]
-              }
-            },
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "'"
-                },
-                {
-                  "type": "REPEAT",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "CHOICE",
-                        "members": [
-                          {
+                    "type": "REPEAT1",
+                    "content": {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "STRING",
+                              "value": " "
+                            },
+                            {
+                              "type": "STRING",
+                              "value": "\t"
+                            },
+                            {
+                              "type": "STRING",
+                              "value": "\n"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
                             "type": "CHOICE",
                             "members": [
                               {
-                                "type": "PATTERN",
-                                "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
-                              },
-                              {
-                                "type": "CHOICE",
+                                "type": "SEQ",
                                 "members": [
-                                  {
-                                    "type": "CHOICE",
-                                    "members": [
-                                      {
-                                        "type": "STRING",
-                                        "value": "_"
-                                      },
-                                      {
-                                        "type": "CHOICE",
-                                        "members": [
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "[A-Z]"
-                                          },
-                                          {
-                                            "type": "PATTERN",
-                                            "value": "[a-z]"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "type": "PATTERN",
-                                    "value": "[0-9]"
-                                  }
-                                ]
-                              },
-                              {
-                                "type": "CHOICE",
-                                "members": [
-                                  {
-                                    "type": "STRING",
-                                    "value": "!"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "("
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": ")"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": ","
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": ";"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "["
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "]"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "{"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "}"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "|"
-                                  },
                                   {
                                     "type": "STRING",
                                     "value": "%"
-                                  }
-                                ]
-                              },
-                              {
-                                "type": "STRING",
-                                "value": " "
-                              },
-                              {
-                                "type": "SEQ",
-                                "members": [
-                                  {
-                                    "type": "STRING",
-                                    "value": "\\"
-                                  },
-                                  {
-                                    "type": "CHOICE",
-                                    "members": [
-                                      {
-                                        "type": "STRING",
-                                        "value": "\\"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "'"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "\""
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "`"
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "type": "SEQ",
-                                "members": [
-                                  {
-                                    "type": "STRING",
-                                    "value": "\\"
-                                  },
-                                  {
-                                    "type": "CHOICE",
-                                    "members": [
-                                      {
-                                        "type": "STRING",
-                                        "value": "a"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "b"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "r"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "f"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "t"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "n"
-                                      },
-                                      {
-                                        "type": "STRING",
-                                        "value": "v"
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "type": "SEQ",
-                                "members": [
-                                  {
-                                    "type": "STRING",
-                                    "value": "\\"
                                   },
                                   {
                                     "type": "REPEAT1",
                                     "content": {
-                                      "type": "PATTERN",
-                                      "value": "[0-7]"
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "PATTERN",
+                                          "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "CHOICE",
+                                              "members": [
+                                                {
+                                                  "type": "STRING",
+                                                  "value": "_"
+                                                },
+                                                {
+                                                  "type": "CHOICE",
+                                                  "members": [
+                                                    {
+                                                      "type": "PATTERN",
+                                                      "value": "[A-Z]"
+                                                    },
+                                                    {
+                                                      "type": "PATTERN",
+                                                      "value": "[a-z]"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "PATTERN",
+                                              "value": "[0-9]"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "!"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "("
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": ")"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": ","
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": ";"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "["
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "]"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "{"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "}"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "|"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "%"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": " "
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "\t"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "\n"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "\\"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "'"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "\""
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "`"
+                                            }
+                                          ]
+                                        }
+                                      ]
                                     }
                                   },
                                   {
                                     "type": "STRING",
-                                    "value": "\\"
+                                    "value": "\n"
                                   }
                                 ]
                               },
@@ -3161,81 +2648,498 @@
                                 "members": [
                                   {
                                     "type": "STRING",
-                                    "value": "\\"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "x"
+                                    "value": "/*"
                                   },
                                   {
                                     "type": "REPEAT1",
                                     "content": {
-                                      "type": "PATTERN",
-                                      "value": "[0-9A-Fa-f]"
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "PATTERN",
+                                          "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "CHOICE",
+                                              "members": [
+                                                {
+                                                  "type": "STRING",
+                                                  "value": "_"
+                                                },
+                                                {
+                                                  "type": "CHOICE",
+                                                  "members": [
+                                                    {
+                                                      "type": "PATTERN",
+                                                      "value": "[A-Z]"
+                                                    },
+                                                    {
+                                                      "type": "PATTERN",
+                                                      "value": "[a-z]"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "PATTERN",
+                                              "value": "[0-9]"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "!"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "("
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": ")"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": ","
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": ";"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "["
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "]"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "{"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "}"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "|"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "%"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": " "
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "\t"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "\n"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "\\"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "'"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "\""
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "`"
+                                            }
+                                          ]
+                                        }
+                                      ]
                                     }
                                   },
                                   {
                                     "type": "STRING",
-                                    "value": "\\"
+                                    "value": "*/"
                                   }
                                 ]
                               }
                             ]
-                          },
-                          {
-                            "type": "SEQ",
-                            "members": [
-                              {
-                                "type": "STRING",
-                                "value": "'"
-                              },
-                              {
-                                "type": "STRING",
-                                "value": "'"
-                              }
-                            ]
-                          },
-                          {
-                            "type": "STRING",
-                            "value": "\""
-                          },
-                          {
-                            "type": "STRING",
-                            "value": "`"
                           }
-                        ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "PATTERN",
+                        "value": "[a-z]"
                       },
                       {
-                        "type": "SEQ",
-                        "members": [
-                          {
-                            "type": "STRING",
-                            "value": "\\"
-                          },
-                          {
-                            "type": "STRING",
-                            "value": "\n"
-                          }
-                        ]
+                        "type": "REPEAT",
+                        "content": {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "CHOICE",
+                              "members": [
+                                {
+                                  "type": "STRING",
+                                  "value": "_"
+                                },
+                                {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "[A-Z]"
+                                    },
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "[a-z]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "PATTERN",
+                              "value": "[0-9]"
+                            }
+                          ]
+                        }
                       }
                     ]
+                  },
+                  {
+                    "type": "REPEAT1",
+                    "content": {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PATTERN",
+                          "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "\\"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "'"
+                      },
+                      {
+                        "type": "REPEAT",
+                        "content": {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "CHOICE",
+                              "members": [
+                                {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "_"
+                                            },
+                                            {
+                                              "type": "CHOICE",
+                                              "members": [
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "[A-Z]"
+                                                },
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "[a-z]"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "PATTERN",
+                                          "value": "[0-9]"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "!"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "("
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ")"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ","
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ";"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "["
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "]"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "{"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "}"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "|"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "%"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "STRING",
+                                      "value": " "
+                                    },
+                                    {
+                                      "type": "SEQ",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "\\"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "'"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "\""
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "`"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "SEQ",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "a"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "b"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "r"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "f"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "t"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "n"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "v"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "SEQ",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        },
+                                        {
+                                          "type": "REPEAT1",
+                                          "content": {
+                                            "type": "PATTERN",
+                                            "value": "[0-7]"
+                                          }
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "SEQ",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "x"
+                                        },
+                                        {
+                                          "type": "REPEAT1",
+                                          "content": {
+                                            "type": "PATTERN",
+                                            "value": "[0-9A-Fa-f]"
+                                          }
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "SEQ",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": "'"
+                                    },
+                                    {
+                                      "type": "STRING",
+                                      "value": "'"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "STRING",
+                                  "value": "\""
+                                },
+                                {
+                                  "type": "STRING",
+                                  "value": "`"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "SEQ",
+                              "members": [
+                                {
+                                  "type": "STRING",
+                                  "value": "\\"
+                                },
+                                {
+                                  "type": "STRING",
+                                  "value": "\n"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "'"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "STRING",
+                    "value": ";"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "!"
                   }
-                },
-                {
-                  "type": "STRING",
-                  "value": "'"
-                }
-              ]
-            },
-            {
-              "type": "STRING",
-              "value": ";"
-            },
-            {
-              "type": "STRING",
-              "value": "!"
-            }
-          ]
+                ]
+              }
+            ]
+          }
         },
         {
           "type": "SYMBOL",
@@ -4623,7 +4527,443 @@
         ]
       }
     },
-    "_functional_notation": {
+    "variable_term": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "REPEAT1",
+                "content": {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": " "
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "\t"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "\n"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "PREC",
+                      "value": 1,
+                      "content": {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "%"
+                              },
+                              {
+                                "type": "REPEAT1",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "_"
+                                            },
+                                            {
+                                              "type": "CHOICE",
+                                              "members": [
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "[A-Z]"
+                                                },
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "[a-z]"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "PATTERN",
+                                          "value": "[0-9]"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "!"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "("
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ")"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ","
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ";"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "["
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "]"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "{"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "}"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "|"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "%"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": " "
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\t"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\n"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "'"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\""
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "`"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "STRING",
+                                "value": "\n"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "/*"
+                              },
+                              {
+                                "type": "REPEAT1",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "_"
+                                            },
+                                            {
+                                              "type": "CHOICE",
+                                              "members": [
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "[A-Z]"
+                                                },
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "[a-z]"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "PATTERN",
+                                          "value": "[0-9]"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "!"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "("
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ")"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ","
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": ";"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "["
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "]"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "{"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "}"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "|"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "%"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": " "
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\t"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\n"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "\\"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "'"
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "\""
+                                        },
+                                        {
+                                          "type": "STRING",
+                                          "value": "`"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "STRING",
+                                "value": "*/"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "_"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "_"
+                      },
+                      {
+                        "type": "REPEAT1",
+                        "content": {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "CHOICE",
+                              "members": [
+                                {
+                                  "type": "STRING",
+                                  "value": "_"
+                                },
+                                {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "[A-Z]"
+                                    },
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "[a-z]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "PATTERN",
+                              "value": "[0-9]"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "PATTERN",
+                        "value": "[A-Z]"
+                      },
+                      {
+                        "type": "REPEAT",
+                        "content": {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "CHOICE",
+                              "members": [
+                                {
+                                  "type": "STRING",
+                                  "value": "_"
+                                },
+                                {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "[A-Z]"
+                                    },
+                                    {
+                                      "type": "PATTERN",
+                                      "value": "[a-z]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "PATTERN",
+                              "value": "[0-9]"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "functional_notation": {
       "type": "SEQ",
       "members": [
         {
@@ -4991,7 +5331,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "arg"
+            "name": "_arg"
           },
           {
             "type": "REPEAT",
@@ -5340,7 +5680,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "arg"
+                  "name": "_arg"
                 }
               ]
             }
@@ -5348,7 +5688,7 @@
         ]
       }
     },
-    "arg": {
+    "_arg": {
       "type": "PREC",
       "value": 999,
       "content": {
@@ -5360,7 +5700,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
@@ -5713,7 +6053,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "term"
+              "name": "_term"
             },
             {
               "type": "TOKEN",
@@ -6069,7 +6409,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "term"
+              "name": "_term"
             },
             {
               "type": "TOKEN",
@@ -6415,55 +6755,55 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_1200xfx"
+          "name": "operation_1200xfx"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_1200fx"
+          "name": "operation_1200fx"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_1100xfy"
+          "name": "operation_1100xfy"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_1050xfy"
+          "name": "operation_1050xfy"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_1000xfy"
+          "name": "operation_1000xfy"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_900fy"
+          "name": "operation_900fy"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_700xfx"
+          "name": "operation_700xfx"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_500yfx"
+          "name": "operation_500yfx"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_400yfx"
+          "name": "operation_400yfx"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_200xfx"
+          "name": "operation_200xfx"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_200xfy"
+          "name": "operation_200xfy"
         },
         {
           "type": "SYMBOL",
-          "name": "_operation_200fy"
+          "name": "operation_200fy"
         }
       ]
     },
-    "_operation_1200xfx": {
+    "operation_1200xfx": {
       "type": "PREC_LEFT",
       "value": 1,
       "content": {
@@ -6471,20 +6811,20 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "PATTERN",
-            "value": "(:-)|(-->)"
+            "value": "(:\\-)|(\\-\\->)"
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_1200fx": {
+    "operation_1200fx": {
       "type": "PREC_LEFT",
       "value": 1,
       "content": {
@@ -6492,16 +6832,16 @@
         "members": [
           {
             "type": "PATTERN",
-            "value": "(:-)|(\\?-)"
+            "value": "(:\\-)|(\\?-)"
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_1100xfy": {
+    "operation_1100xfy": {
       "type": "PREC_RIGHT",
       "value": 101,
       "content": {
@@ -6509,7 +6849,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "STRING",
@@ -6517,12 +6857,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_1050xfy": {
+    "operation_1050xfy": {
       "type": "PREC_RIGHT",
       "value": 151,
       "content": {
@@ -6530,7 +6870,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "STRING",
@@ -6538,12 +6878,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_1000xfy": {
+    "operation_1000xfy": {
       "type": "PREC_RIGHT",
       "value": 201,
       "content": {
@@ -6551,7 +6891,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "CHOICE",
@@ -6904,12 +7244,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_900fy": {
+    "operation_900fy": {
       "type": "PREC_RIGHT",
       "value": 301,
       "content": {
@@ -6921,12 +7261,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_700xfx": {
+    "operation_700xfx": {
       "type": "PREC_LEFT",
       "value": 501,
       "content": {
@@ -6934,7 +7274,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "PATTERN",
@@ -6942,12 +7282,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_500yfx": {
+    "operation_500yfx": {
       "type": "PREC_LEFT",
       "value": 701,
       "content": {
@@ -6955,7 +7295,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "PATTERN",
@@ -6963,12 +7303,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_400yfx": {
+    "operation_400yfx": {
       "type": "PREC_LEFT",
       "value": 801,
       "content": {
@@ -6976,7 +7316,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "PATTERN",
@@ -6984,12 +7324,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_200xfx": {
+    "operation_200xfx": {
       "type": "PREC_LEFT",
       "value": 1001,
       "content": {
@@ -6997,7 +7337,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "STRING",
@@ -7005,12 +7345,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_200xfy": {
+    "operation_200xfy": {
       "type": "PREC_RIGHT",
       "value": 1001,
       "content": {
@@ -7018,7 +7358,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           },
           {
             "type": "STRING",
@@ -7026,12 +7366,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_operation_200fy": {
+    "operation_200fy": {
       "type": "PREC_RIGHT",
       "value": 1001,
       "content": {
@@ -7043,12 +7383,12 @@
           },
           {
             "type": "SYMBOL",
-            "name": "term"
+            "name": "_term"
           }
         ]
       }
     },
-    "_list_notation": {
+    "list_notation": {
       "type": "SEQ",
       "members": [
         {
@@ -7748,7 +8088,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "arg"
+                "name": "_arg"
               },
               {
                 "type": "REPEAT",
@@ -8097,7 +8437,7 @@
                     },
                     {
                       "type": "SYMBOL",
-                      "name": "arg"
+                      "name": "_arg"
                     }
                   ]
                 }
@@ -8110,7 +8450,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "arg"
+              "name": "_arg"
             },
             {
               "type": "TOKEN",
@@ -8454,13 +8794,13 @@
             },
             {
               "type": "SYMBOL",
-              "name": "arg"
+              "name": "_arg"
             }
           ]
         }
       ]
     },
-    "_curly_bracketed_notation": {
+    "curly_bracketed_notation": {
       "type": "SEQ",
       "members": [
         {
@@ -8805,7 +9145,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "term"
+          "name": "_term"
         },
         {
           "type": "TOKEN",
