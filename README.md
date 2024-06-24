@@ -1,6 +1,6 @@
 # tree-sitter-problog
 
-[![status-badge](https://ci.codeberg.org/api/badges/13471/status.svg)](https://ci.codeberg.org/repos/13471)
+[![status-badge](https://ci.codeberg.org/api/badges/13471/status.svg?branch=feat/problog)](https://ci.codeberg.org/repos/13471/branches/feat%2Fproblog)
 
 ProbLog grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 based on
