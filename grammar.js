@@ -420,7 +420,7 @@ module.exports = grammar({
         $.functional_notation,
         $._operator_notation,
         $.list_notation,
-        $.curly_bracketed_notation
+        $.curly_bracketed_notation,
       ),
     // 6.3.1 Atomic terms
     _atomic_term: $ =>
@@ -462,8 +462,7 @@ module.exports = grammar({
     functional_notation: $ =>
       seq(
         $.atom,
-        token(seq(optional(layout_text_sequence),
-        open_ct)),
+        token(seq(optional(layout_text_sequence), open_ct)),
         $.arg_list,
         close,
       ),
