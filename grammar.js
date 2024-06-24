@@ -313,71 +313,26 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   end_char = ".",
   end_token = end_char,
   // 6.4 Tokens
-  name = token(seq(
-    optional(layout_text_sequence),
-    name_token,
-  )),
-  variable = token(seq(
-    optional(layout_text_sequence),
-    variable_token,
-  )),
-  integer = token(seq(
-    optional(layout_text_sequence),
-    integer_token,
-  )),
-  float_number = token(seq(
-    optional(layout_text_sequence),
-    float_number_token,
-  )),
-  double_quoted_list = token(seq(
-    optional(layout_text_sequence),
-    double_quoted_list_token,
-  )),
-  open = token(seq(
-    optional(layout_text_sequence),
-    open_token,
-  )),
+  name = token(name_token),
+  variable = token(variable_token),
+  integer = token(integer_token),
+  float_number = token(float_number_token),
+  double_quoted_list = token(double_quoted_list_token),
+  open = token(open_token),
   open_ct = token(open_token),
-  close = token(seq(
-    optional(layout_text_sequence),
-    close_token,
-  )),
-  open_list = token(seq(
-    optional(layout_text_sequence),
-    open_list_token,
-  )),
-  close_list = token(seq(
-    optional(layout_text_sequence),
-    close_list_token,
-  )),
-  open_curly = token(seq(
-    optional(layout_text_sequence),
-    open_curly_token,
-  )),
-  close_curly = token(seq(
-    optional(layout_text_sequence),
-    close_curly_token,
-  )),
-  ht_sep = token(seq(
-    optional(layout_text_sequence),
-    head_tail_separator_token,
-  )),
-  comma = token(seq(
-    optional(layout_text_sequence),
-    comma_token,
-  )),
-  end = seq(
-    optional(layout_text_sequence),
-    end_token,
-  );
+  close = token(close_token),
+  open_list = token(open_list_token),
+  close_list = token(close_list_token),
+  open_curly = token(open_curly_token),
+  close_curly = token(close_curly_token),
+  ht_sep = token(head_tail_separator_token),
+  comma = token(comma_token),
+  end = seq(end_token);
 
 module.exports = grammar({
   name: "prolog",
   extras: _ => [
-    /\s/,
-    "\n",
-    "\r",
-    comment,
+    layout_text_sequence
   ],
   superTypes: $ => [
     $._term,
@@ -461,8 +416,8 @@ module.exports = grammar({
     // 6.3.3 Compound terms - functional notation
     functional_notation: $ =>
       seq(
-        $.atom,
-        token(seq(optional(layout_text_sequence), open_ct)),
+        field("function", $.atom),
+        open_ct,
         $.arg_list,
         close,
       ),
@@ -513,108 +468,120 @@ module.exports = grammar({
         $.operation_200xfy,
         $.operation_200fy,
       ),
+    operator_1200xfx: _ => /(:\-)|(\-\->)/,
     operation_1200xfx: $ =>
       prec.left(
         1,
         seq(
           $._term,
-          /(:\-)|(\-\->)/,
+          $.operator_1200xfx,
           $._term,
         ),
       ),
+    operator_1200fx: _ => /(:\-)|(\?-)/,
     operation_1200fx: $ =>
       prec.left(
         1,
         seq(
-          /(:\-)|(\?-)/,
+          $.operator_1200fx,
           $._term,
         ),
       ),
+    operator_1100xfy: _ => ";",
     operation_1100xfy: $ =>
       prec.right(
         101,
         seq(
           $._term,
-          ";",
+          $.operator_1100xfy,
           $._term,
         ),
       ),
+    operator_1050xfy: _ => "->",
     operation_1050xfy: $ =>
       prec.right(
         151,
         seq(
           $._term,
-          "->",
+          $.operator_1050xfy,
           $._term,
         ),
       ),
+    operator_1000xfy: _ => choice("`,`", comma),
     operation_1000xfy: $ =>
       prec.right(
         201,
         seq(
           $._term,
-          choice("`,`", comma),
+          $.operator_1000xfy,
           $._term,
         ),
       ),
+    operator_900fy: _ => "\\+",
     operation_900fy: $ =>
       prec.right(
         301,
         seq(
-          "\\+",
+          $.operator_900fy,
           $._term,
         ),
       ),
+    operator_700xfx: _ => /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/,
     operation_700xfx: $ =>
       prec.left(
         501,
         seq(
           $._term,
-          /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/,
+          $.operator_700xfx,
           $._term,
         ),
       ),
+    operator_500yfx: _ => /\+|\-|\/\\|\\\//,
     operation_500yfx: $ =>
       prec.left(
         701,
         seq(
           $._term,
-          /\+|\-|\/\\|\\\//,
+          $.operator_500yfx,
           $._term,
         ),
       ),
+    operator_400yfx: _ => /\*|\/|\/\/|rem|mod|<<|>>/,
     operation_400yfx: $ =>
       prec.left(
         801,
         seq(
           $._term,
-          /\*|\/|\/\/|rem|mod|<<|>>/,
+          $.operator_400yfx,
           $._term,
         ),
       ),
+    operator_200xfx: _ => "**",
     operation_200xfx: $ =>
       prec.left(
         1001,
         seq(
           $._term,
-          "**",
+          $.operator_200xfx,
           $._term,
         ),
       ),
+    operator_200xfy: _ => "^",
     operation_200xfy: $ =>
       prec.right(
         1001,
         seq(
           $._term,
-          "^",
+          $.operator_200xfy,
           $._term,
         ),
       ),
+    operator_200fy: _ => /\-\\/,
     operation_200fy: $ =>
       prec.right(
         1001,
         seq(
-          /\-\\/,
+          $.operator_200fy,
           $._term,
         ),
       ),

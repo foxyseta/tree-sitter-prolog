@@ -1,23 +1,26 @@
 (atom) @constant
 
+(functional_notation
+  function: (atom) @function)
+
 [
   (number)
   (negative_number)
 ] @number
 
-(variable_term) @variable
-
 [
-  (operation_1200xfx)
-  (operation_1200fx)
-  (operation_1100xfy)
-  (operation_1050xfy)
-  (operation_1000xfy)
-  (operation_900fy)
-  (operation_700xfx)
-  (operation_500yfx)
-  (operation_400yfx)
-  (operation_200xfx)
-  (operation_200xfy)
-  (operation_200fy)
+  (operator_1200xfx)
+  (operator_1200fx)
+  (operator_1100xfy)
+  (operator_1050xfy)
+  (operator_1000xfy)
+  (operator_900fy)
+  (operator_700xfx)
+  (operator_500yfx)
+  (operator_400yfx)
+  (operator_200xfx)
+  (operator_200xfy)
+  (operator_200fy)
 ] @operator
+
+(variable_term) @variable

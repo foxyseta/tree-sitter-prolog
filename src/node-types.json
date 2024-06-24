@@ -369,17 +369,24 @@
   {
     "type": "functional_notation",
     "named": true,
-    "fields": {},
+    "fields": {
+      "function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "atom",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "arg_list",
-          "named": true
-        },
-        {
-          "type": "atom",
           "named": true
         }
       ]
@@ -563,6 +570,10 @@
           "named": true
         },
         {
+          "type": "operator_1000xfy",
+          "named": true
+        },
+        {
           "type": "variable_term",
           "named": true
         }
@@ -647,6 +658,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_1050xfy",
           "named": true
         },
         {
@@ -737,6 +752,10 @@
           "named": true
         },
         {
+          "type": "operator_1100xfy",
+          "named": true
+        },
+        {
           "type": "variable_term",
           "named": true
         }
@@ -748,7 +767,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -821,6 +840,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_1200fx",
           "named": true
         },
         {
@@ -911,6 +934,10 @@
           "named": true
         },
         {
+          "type": "operator_1200xfx",
+          "named": true
+        },
+        {
           "type": "variable_term",
           "named": true
         }
@@ -922,7 +949,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -995,6 +1022,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_200fy",
           "named": true
         },
         {
@@ -1085,6 +1116,10 @@
           "named": true
         },
         {
+          "type": "operator_200xfx",
+          "named": true
+        },
+        {
           "type": "variable_term",
           "named": true
         }
@@ -1169,6 +1204,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_200xfy",
           "named": true
         },
         {
@@ -1259,6 +1298,10 @@
           "named": true
         },
         {
+          "type": "operator_400yfx",
+          "named": true
+        },
+        {
           "type": "variable_term",
           "named": true
         }
@@ -1343,6 +1386,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_500yfx",
           "named": true
         },
         {
@@ -1433,6 +1480,10 @@
           "named": true
         },
         {
+          "type": "operator_700xfx",
+          "named": true
+        },
+        {
           "type": "variable_term",
           "named": true
         }
@@ -1444,7 +1495,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -1520,11 +1571,20 @@
           "named": true
         },
         {
+          "type": "operator_900fy",
+          "named": true
+        },
+        {
           "type": "variable_term",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "operator_1000xfy",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -1546,47 +1606,11 @@
     }
   },
   {
-    "type": "\t",
-    "named": false
-  },
-  {
-    "type": "\n",
-    "named": false
-  },
-  {
-    "type": " ",
-    "named": false
-  },
-  {
-    "type": "!",
-    "named": false
-  },
-  {
-    "type": "\"",
-    "named": false
-  },
-  {
-    "type": "%",
-    "named": false
-  },
-  {
-    "type": "'",
-    "named": false
-  },
-  {
     "type": "(",
     "named": false
   },
   {
     "type": ")",
-    "named": false
-  },
-  {
-    "type": "**",
-    "named": false
-  },
-  {
-    "type": "*/",
     "named": false
   },
   {
@@ -1598,15 +1622,7 @@
     "named": false
   },
   {
-    "type": "->",
-    "named": false
-  },
-  {
     "type": ".",
-    "named": false
-  },
-  {
-    "type": "/*",
     "named": false
   },
   {
@@ -1614,35 +1630,11 @@
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
     "type": "[",
     "named": false
   },
   {
-    "type": "\\",
-    "named": false
-  },
-  {
-    "type": "\\+",
-    "named": false
-  },
-  {
     "type": "]",
-    "named": false
-  },
-  {
-    "type": "^",
-    "named": false
-  },
-  {
-    "type": "_",
-    "named": false
-  },
-  {
-    "type": "`",
     "named": false
   },
   {
@@ -1655,6 +1647,50 @@
   },
   {
     "type": "empty_list",
+    "named": true
+  },
+  {
+    "type": "operator_1050xfy",
+    "named": true
+  },
+  {
+    "type": "operator_1100xfy",
+    "named": true
+  },
+  {
+    "type": "operator_1200fx",
+    "named": true
+  },
+  {
+    "type": "operator_1200xfx",
+    "named": true
+  },
+  {
+    "type": "operator_200fy",
+    "named": true
+  },
+  {
+    "type": "operator_200xfx",
+    "named": true
+  },
+  {
+    "type": "operator_200xfy",
+    "named": true
+  },
+  {
+    "type": "operator_400yfx",
+    "named": true
+  },
+  {
+    "type": "operator_500yfx",
+    "named": true
+  },
+  {
+    "type": "operator_700xfx",
+    "named": true
+  },
+  {
+    "type": "operator_900fy",
     "named": true
   },
   {

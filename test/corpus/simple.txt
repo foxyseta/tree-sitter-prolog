@@ -23,6 +23,7 @@ test_predicate:-
   (clause_term
     (operation_1200xfx
       (atom)
+      (operator_1200xfx)
       (atom))))
 
 ====================
@@ -38,6 +39,7 @@ test_dcg-->
   (clause_term
     (operation_1200xfx
       (atom)
+      (operator_1200xfx)
       (atom))))
 
 ====================
