@@ -1,7 +1,12 @@
 /*
  * All section numbers refer to: "ISO/IEC 13211: Information technology –
  * Programming languages – Prolog. International Organization for
- * Standardization, Geneva."
+ * Standardization, Geneva.".
+ *
+ * ProbLog-specifi modifications follow L. De Raedt, A. Kimmig and H. Toivonen.
+ * "ProbLog: A Probabilistic Prolog and its Application in Link Discovery".
+ * IJCAI 2007, Proceedings of the 20th International Joint Conference on
+ * Artificial Intelligence, pp. 2462 - 2467, 2007.
  */
 
 const // 6.5.1 Graphic character
@@ -372,7 +377,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   );
 
 module.exports = grammar({
-  name: "prolog",
+  name: "problog",
   extras: _ => [
     /\s/,
     "\n",
@@ -404,9 +409,16 @@ module.exports = grammar({
       prec(
         1201,
         seq(
+          optional($.probability_label),
           $._term,
           end,
         ),
+      ),
+    probability_label: $ =>
+      prec(1,seq(
+        $._number,
+        optional(layout_text_sequence),
+        "::"),
       ),
     // 6.3 Terms
     _term: $ =>

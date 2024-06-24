@@ -1,0 +1,44 @@
+==================
+Clause 1
+==================
+
+0.2::test_predicate.
+
+---
+
+(source_file
+  (clause_term
+    (probability_label)
+    (atom)))
+
+==================
+Clause 2
+==================
+
+1::test_predicate:-
+  true.
+
+---
+
+(source_file
+  (clause_term
+    (probability_label)
+    (operation_1200xfx
+      (atom)
+      (atom))))
+
+====================
+DCG
+====================
+
+0.8::test_dcg-->
+  true.
+
+---
+
+(source_file
+  (clause_term
+    (probability_label)
+    (operation_1200xfx
+      (atom)
+      (atom))))

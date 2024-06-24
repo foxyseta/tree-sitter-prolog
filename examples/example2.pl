@@ -1,2 +1,2 @@
-test(b):- % C
+0::test(b):- % C
   r, g, m.
