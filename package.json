@@ -29,9 +29,12 @@
     {
       "scope": "source.prolog",
       "file-types": [
-        "pl"
+        "pl",
+        "pro",
+        "P"
       ],
-      "injection-regex": "prolog"
+      "injection-regex": "prolog",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "devDependencies": {

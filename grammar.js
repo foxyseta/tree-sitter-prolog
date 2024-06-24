@@ -425,18 +425,18 @@ module.exports = grammar({
     // 6.3.1 Atomic terms
     _atomic_term: $ =>
       choice(
-        $._number,
-        $._negative_number,
+        $.number,
+        $.negative_number,
         $.atom,
       ),
     // 6.3.1.1 Numbers
-    _number: _ =>
+    number: _ =>
       prec.left(choice(
         integer,
         float_number,
       )),
     // 6.3.1.2 Negative numbers
-    _negative_number: _ =>
+    negative_number: _ =>
       prec(
         200,
         seq(

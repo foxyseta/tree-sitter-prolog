@@ -776,11 +776,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_number"
+          "name": "number"
         },
         {
           "type": "SYMBOL",
-          "name": "_negative_number"
+          "name": "negative_number"
         },
         {
           "type": "SYMBOL",
@@ -788,7 +788,7 @@
         }
       ]
     },
-    "_number": {
+    "number": {
       "type": "PREC_LEFT",
       "value": 0,
       "content": {
@@ -1644,7 +1644,7 @@
         ]
       }
     },
-    "_negative_number": {
+    "negative_number": {
       "type": "PREC",
       "value": 200,
       "content": {
