@@ -25,11 +25,4 @@ d:-
   l
 }.
 
-function
-        (
-         a,
-         c,
-         a,
-         b,
-         c
-        ).
+function(a,c,a,b,c).

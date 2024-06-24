@@ -1,6 +1,6 @@
-:-dynamic other_thing/3.
+:- other_thing/3.
 
-:-volitile get_out/4.
+:- get_out/4.
 
 g -->
   ( car ->

@@ -462,7 +462,8 @@ module.exports = grammar({
     functional_notation: $ =>
       seq(
         $.atom,
-        open_ct,
+        token(seq(optional(layout_text_sequence),
+        open_ct)),
         $.arg_list,
         close,
       ),
