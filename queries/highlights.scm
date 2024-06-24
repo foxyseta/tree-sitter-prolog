@@ -1,3 +1,5 @@
+(comment) @comment
+
 (atom) @constant
 
 (functional_notation

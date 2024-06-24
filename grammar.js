@@ -376,6 +376,7 @@ module.exports = grammar({
         $._operator_notation,
         $.list_notation,
         $.curly_bracketed_notation,
+        $.double_quoted_list_notation,
       ),
     // 6.3.1 Atomic terms
     _atomic_term: $ =>
@@ -610,5 +611,7 @@ module.exports = grammar({
         $._term,
         close_curly,
       ),
+    // 6.3.7 Double quoted list notation
+    double_quoted_list_notation: _ => double_quoted_list,
   },
 });

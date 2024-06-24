@@ -16,6 +16,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -122,6 +126,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -209,6 +217,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -293,6 +305,10 @@
         },
         {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -409,6 +425,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -506,6 +526,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -594,6 +618,10 @@
         },
         {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -688,6 +716,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -776,6 +808,10 @@
         },
         {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -870,6 +906,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -958,6 +998,10 @@
         },
         {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1052,6 +1096,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -1140,6 +1188,10 @@
         },
         {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1234,6 +1286,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -1322,6 +1378,10 @@
         },
         {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1416,6 +1476,10 @@
           "named": true
         },
         {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
@@ -1504,6 +1568,10 @@
         },
         {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1640,6 +1708,10 @@
   {
     "type": "`,`",
     "named": false
+  },
+  {
+    "type": "double_quoted_list_notation",
+    "named": true
   },
   {
     "type": "empty_curly_brackets",
