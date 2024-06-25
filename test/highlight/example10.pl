@@ -1,6 +1,7 @@
-c. % Hello!
-% <- constant
-       % <- comment
+0.2::c. % Hello!
+% <- attribute
+%    ^ constant
+        % <- comment
 {
 % <- punctuation.bracket
   [
@@ -29,10 +30,11 @@ c. % Hello!
          there! */
       % ^ comment
 
-function(a,c,a,b,c).
-% <- function
-%       ^ punctuation.bracket
-%        ^ constant
-%         ^ punctuation.delimiter
-%                 ^ punctuation.bracket
-%                  ^ punctuation.delimiter
+0.6::function(a,c,a,b,c).
+% <- attribute
+%    ^ function
+%            ^ punctuation.bracket
+%             ^ constant
+%              ^ punctuation.delimiter
+%                      ^ punctuation.bracket
+%                       ^ punctuation.delimiter

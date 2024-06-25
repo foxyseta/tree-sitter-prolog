@@ -341,14 +341,17 @@ module.exports = grammar({
           $.end,
         ),
       ),
+    // ProbLog extension to ISO Prolog
     probability_label: $ =>
-      // prec(
-      //  1,
       seq(
-        $.number,
+        $.probability,
         "::",
       ),
-    // ),
+    probability: _ =>
+      prec.left(choice(
+        integer,
+        float_number,
+      )),
     // 6.3 Terms
     _term: $ =>
       choice(

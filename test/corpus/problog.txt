@@ -9,7 +9,7 @@ Clause 1
 (source_file
   (clause_term
     (probability_label
-      (number))
+      (probability))
     (atom)
     (end)))
 
@@ -25,7 +25,7 @@ Clause 2
 (source_file
   (clause_term
     (probability_label
-      (number))
+      (probability))
     (operation_1200xfx
       (atom)
       (operator_1200xfx)
@@ -44,7 +44,7 @@ DCG
 (source_file
   (clause_term
     (probability_label
-      (number))
+      (probability))
     (operation_1200xfx
       (atom)
       (operator_1200xfx)

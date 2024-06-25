@@ -1923,6 +1923,11 @@
     }
   },
   {
+    "type": "probability",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "probability_label",
     "named": true,
     "fields": {},
@@ -1931,7 +1936,7 @@
       "required": true,
       "types": [
         {
-          "type": "number",
+          "type": "probability",
           "named": true
         }
       ]

@@ -1,7 +1,7 @@
 {
-  "name": "tree-sitter-prolog",
+  "name": "tree-sitter-problog",
   "version": "1.0.0",
-  "description": "Tree-sitter grammar for ISO Prolog",
+  "description": "Tree-sitter grammar for ProbLog",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {

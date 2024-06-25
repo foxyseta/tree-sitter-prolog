@@ -2,12 +2,14 @@
 Clause 1
 ==================
 
-test_predicate.
+0.3::test_predicate.
 
 ---
 
 (source_file
   (clause_term
+    (probability_label
+      (probability))
     (atom)
     (end)))
 
@@ -32,13 +34,15 @@ test_predicate:-
 DCG
 ====================
 
-test_dcg-->
+1::test_dcg-->
   true.
 
 ---
 
 (source_file
   (clause_term
+    (probability_label
+      (probability))
     (operation_1200xfx
       (atom)
       (operator_1200xfx)

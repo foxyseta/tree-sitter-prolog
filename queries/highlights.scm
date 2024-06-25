@@ -1,3 +1,5 @@
+(probability) @attribute
+
 (comment) @comment
 
 (atom) @constant

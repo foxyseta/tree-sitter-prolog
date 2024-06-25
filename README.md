@@ -4,7 +4,10 @@
 
 ProbLog grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 based on
-[foxyseta/tree-sitter-prolog](https://codeberg.org/foxy/tree-sitter-prolog).
+[foxyseta/tree-sitter-prolog](https://codeberg.org/foxy/tree-sitter-prolog):
+- the default branch is `feat/problog`;
+- the `main` branch, which is not the default one, is kept in sync with the
+  homonymous branch from the upstream repository.
 
 # References
 
