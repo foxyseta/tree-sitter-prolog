@@ -57,7 +57,8 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   new_line_char = "\n",
   /* resonable assumption: there are no NULL characters within the file. Use
    * eof() instead once https://github.com/tree-sitter/tree-sitter/pull/2488 is
-   * in production (tree-sitter v0.23).
+   * in production (tree-sitter v0.23). The ISO specification does not deal with
+   * these, as it does not accept single line comments on the last line.
    */
   end_of_file_char = "\0",
   layout_char = choice(
@@ -340,7 +341,6 @@ module.exports = grammar({
           $.clause_term,
         ),
       ),
-    comment: _ => token(choice(single_line_comment, bracketed_comment)),
     // 6.2.1.1 Directives
     directive_term: $ =>
       seq(
@@ -607,5 +607,7 @@ module.exports = grammar({
       ),
     // 6.3.7 Double quoted list notation
     double_quoted_list_notation: _ => double_quoted_list,
+    // 6.4.1 Layout text
+    comment: _ => token(choice(single_line_comment, bracketed_comment)),
   },
 });
