@@ -8,7 +8,8 @@ test_predicate.
 
 (source_file
   (clause_term
-    (atom)))
+    (atom)
+    (end)))
 
 ==================
 Clause 2
@@ -24,7 +25,8 @@ test_predicate:-
     (operation_1200xfx
       (atom)
       (operator_1200xfx)
-      (atom))))
+      (atom))
+    (end)))
 
 ====================
 DCG
@@ -40,7 +42,8 @@ test_dcg-->
     (operation_1200xfx
       (atom)
       (operator_1200xfx)
-      (atom))))
+      (atom))
+    (end)))
 
 ====================
 Directive
@@ -52,4 +55,5 @@ Directive
 
 (source_file
   (directive_term
-    (atom)))
+    (atom)
+    (end)))

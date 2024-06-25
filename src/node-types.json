@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -33,6 +37,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -114,11 +122,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "atom",
+          "named": true
+        },
+        {
+          "type": "close",
           "named": true
         },
         {
@@ -127,6 +139,10 @@
         },
         {
           "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
+          "type": "end",
           "named": true
         },
         {
@@ -143,6 +159,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -205,11 +225,19 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "atom",
+          "named": true
+        },
+        {
+          "type": "close",
+          "named": true
+        },
+        {
+          "type": "close_curly",
           "named": true
         },
         {
@@ -234,6 +262,14 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
+          "named": true
+        },
+        {
+          "type": "open_curly",
           "named": true
         },
         {
@@ -296,11 +332,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "atom",
+          "named": true
+        },
+        {
+          "type": "close",
           "named": true
         },
         {
@@ -309,6 +349,10 @@
         },
         {
           "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
+          "type": "end",
           "named": true
         },
         {
@@ -325,6 +369,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -383,6 +431,44 @@
     }
   },
   {
+    "type": "empty_curly_brackets",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "close_curly",
+          "named": true
+        },
+        {
+          "type": "open_curly",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "empty_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "close_list",
+          "named": true
+        },
+        {
+          "type": "open_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "functional_notation",
     "named": true,
     "fields": {
@@ -398,11 +484,19 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "arg_list",
+          "named": true
+        },
+        {
+          "type": "close",
+          "named": true
+        },
+        {
+          "type": "open_ct",
           "named": true
         }
       ]
@@ -418,6 +512,14 @@
       "types": [
         {
           "type": "atom",
+          "named": true
+        },
+        {
+          "type": "close",
+          "named": true
+        },
+        {
+          "type": "close_list",
           "named": true
         },
         {
@@ -442,6 +544,14 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
+          "named": true
+        },
+        {
+          "type": "open_list",
           "named": true
         },
         {
@@ -510,6 +620,16 @@
     "fields": {}
   },
   {
+    "type": "open",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "open_ct",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "operation_1000xfy",
     "named": true,
     "fields": {},
@@ -519,6 +639,10 @@
       "types": [
         {
           "type": "atom",
+          "named": true
+        },
+        {
+          "type": "close",
           "named": true
         },
         {
@@ -543,6 +667,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -617,6 +745,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -638,6 +770,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -712,6 +848,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -733,6 +873,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -807,6 +951,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -828,6 +976,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -902,6 +1054,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -923,6 +1079,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -997,6 +1157,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -1018,6 +1182,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1092,6 +1260,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -1113,6 +1285,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1187,6 +1363,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -1208,6 +1388,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1282,6 +1466,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -1303,6 +1491,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1377,6 +1569,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -1398,6 +1594,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1472,6 +1672,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -1493,6 +1697,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1567,6 +1775,10 @@
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -1588,6 +1800,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1678,10 +1894,6 @@
     "named": false
   },
   {
-    "type": ")",
-    "named": false
-  },
-  {
     "type": ",",
     "named": false
   },
@@ -1690,24 +1902,24 @@
     "named": false
   },
   {
-    "type": ".",
-    "named": false
-  },
-  {
     "type": ":-",
-    "named": false
-  },
-  {
-    "type": "[",
-    "named": false
-  },
-  {
-    "type": "]",
     "named": false
   },
   {
     "type": "`,`",
     "named": false
+  },
+  {
+    "type": "close",
+    "named": true
+  },
+  {
+    "type": "close_curly",
+    "named": true
+  },
+  {
+    "type": "close_list",
+    "named": true
   },
   {
     "type": "comment",
@@ -1718,11 +1930,15 @@
     "named": true
   },
   {
-    "type": "empty_curly_brackets",
+    "type": "end",
     "named": true
   },
   {
-    "type": "empty_list",
+    "type": "open_curly",
+    "named": true
+  },
+  {
+    "type": "open_list",
     "named": true
   },
   {
@@ -1774,15 +1990,7 @@
     "named": true
   },
   {
-    "type": "{",
-    "named": false
-  },
-  {
     "type": "|",
-    "named": false
-  },
-  {
-    "type": "}",
     "named": false
   }
 ]

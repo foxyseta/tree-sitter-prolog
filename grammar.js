@@ -311,16 +311,8 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   integer = token(integer_token),
   float_number = token(float_number_token),
   double_quoted_list = token(double_quoted_list_token),
-  open = token(open_token),
-  open_ct = token(open_token),
-  close = token(close_token),
-  open_list = token(open_list_token),
-  close_list = token(close_list_token),
-  open_curly = token(open_curly_token),
-  close_curly = token(close_curly_token),
   ht_sep = token(head_tail_separator_token),
-  comma = token(comma_token),
-  end = seq(end_token);
+  comma = token(comma_token);
 
 module.exports = grammar({
   name: "prolog",
@@ -341,12 +333,13 @@ module.exports = grammar({
           $.clause_term,
         ),
       ),
+    end: _ => token(seq(end_token)),
     // 6.2.1.1 Directives
     directive_term: $ =>
       seq(
         ":-",
         $._term,
-        end,
+        $.end,
       ),
     // 6.2.1.2 Clauses
     clause_term: $ =>
@@ -354,7 +347,7 @@ module.exports = grammar({
         1201,
         seq(
           $._term,
-          end,
+          $.end,
         ),
       ),
     // 6.3 Terms
@@ -404,17 +397,17 @@ module.exports = grammar({
         $.empty_list,
         $.empty_curly_brackets,
       ),
-    empty_list: _ => token(seq(open_list, close_list)),
-    empty_curly_brackets: _ => token(seq(open_curly, close_curly)),
+    empty_list: $ => seq($.open_list, $.close_list),
+    empty_curly_brackets: $ => seq($.open_curly, $.close_curly),
     // 6.3.2 Variables
     variable_term: _ => variable,
     // 6.3.3 Compound terms - functional notation
     functional_notation: $ =>
       seq(
         field("function", $.atom),
-        open_ct,
+        $.open_ct,
         $.arg_list,
-        close,
+        $.close,
       ),
     arg_list: $ =>
       prec.right(seq(
@@ -439,15 +432,16 @@ module.exports = grammar({
     _operator_notation: $ =>
       choice(
         seq(
-          open,
+          $.open,
           $._term,
-          close,
+          $.close,
         ),
-        seq(
-          open_ct,
-          $._term,
-          close,
-        ),
+        // ISO rule removed to prevent ambiguity:
+        //seq(
+        //  $.open_ct,
+        //  $._term,
+        //  $.close,
+        //),
         // Treesitter/Prolog ISO precedences are inverted.
         // Non-associative operators are set to left-associative
         $.operation_1200xfx,
@@ -583,9 +577,9 @@ module.exports = grammar({
     // 6.3.5 Compound terms - list notation
     list_notation: $ =>
       seq(
-        open_list,
+        $.open_list,
         $._list_notation_items,
-        close_list,
+        $.close_list,
       ),
     _list_notation_items: $ =>
       choice(
@@ -601,12 +595,20 @@ module.exports = grammar({
     // 6.3.6 Compount terms - curly bracketed forms
     curly_bracketed_notation: $ =>
       seq(
-        open_curly,
+        $.open_curly,
         $._term,
-        close_curly,
+        $.close_curly,
       ),
     // 6.3.7 Double quoted list notation
     double_quoted_list_notation: _ => double_quoted_list,
+    // 6.4 Tokens
+    open: _ => token(open_token),
+    open_ct: _ => token(open_token),
+    close: _ => token(close_token),
+    open_list: _ => token(open_list_token),
+    close_list: _ => token(close_list_token),
+    open_curly: _ => token(open_curly_token),
+    close_curly: _ => token(close_curly_token),
     // 6.4.1 Layout text
     comment: _ => token(choice(single_line_comment, bracketed_comment)),
   },

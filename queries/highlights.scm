@@ -25,4 +25,18 @@
   (operator_200fy)
 ] @operator
 
+[
+ (open)
+ (open_ct)
+ (close)
+ (open_list)
+ (close_list)
+ (open_curly)
+ (close_curly)
+] @punctuation.bracket
+
+(end) @punctuation.delimiter
+
+(double_quoted_list_notation) @string
+
 (variable_term) @variable

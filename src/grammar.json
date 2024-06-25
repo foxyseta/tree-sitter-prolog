@@ -17,6 +17,18 @@
         ]
       }
     },
+    "end": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "."
+          }
+        ]
+      }
+    },
     "directive_term": {
       "type": "SEQ",
       "members": [
@@ -29,13 +41,8 @@
           "name": "_term"
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "."
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "end"
         }
       ]
     },
@@ -50,13 +57,8 @@
             "name": "_term"
           },
           {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "."
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "end"
           }
         ]
       }
@@ -851,48 +853,30 @@
       ]
     },
     "empty_list": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "TOKEN",
-            "content": {
-              "type": "STRING",
-              "value": "["
-            }
-          },
-          {
-            "type": "TOKEN",
-            "content": {
-              "type": "STRING",
-              "value": "]"
-            }
-          }
-        ]
-      }
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "open_list"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "close_list"
+        }
+      ]
     },
     "empty_curly_brackets": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "TOKEN",
-            "content": {
-              "type": "STRING",
-              "value": "{"
-            }
-          },
-          {
-            "type": "TOKEN",
-            "content": {
-              "type": "STRING",
-              "value": "}"
-            }
-          }
-        ]
-      }
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "open_curly"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "close_curly"
+        }
+      ]
     },
     "variable_term": {
       "type": "TOKEN",
@@ -1009,22 +993,16 @@
           }
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": "("
-          }
+          "type": "SYMBOL",
+          "name": "open_ct"
         },
         {
           "type": "SYMBOL",
           "name": "arg_list"
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": ")"
-          }
+          "type": "SYMBOL",
+          "name": "close"
         }
       ]
     },
@@ -1084,45 +1062,16 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "TOKEN",
-              "content": {
-                "type": "STRING",
-                "value": "("
-              }
+              "type": "SYMBOL",
+              "name": "open"
             },
             {
               "type": "SYMBOL",
               "name": "_term"
             },
             {
-              "type": "TOKEN",
-              "content": {
-                "type": "STRING",
-                "value": ")"
-              }
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "TOKEN",
-              "content": {
-                "type": "STRING",
-                "value": "("
-              }
-            },
-            {
               "type": "SYMBOL",
-              "name": "_term"
-            },
-            {
-              "type": "TOKEN",
-              "content": {
-                "type": "STRING",
-                "value": ")"
-              }
+              "name": "close"
             }
           ]
         },
@@ -1480,22 +1429,16 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": "["
-          }
+          "type": "SYMBOL",
+          "name": "open_list"
         },
         {
           "type": "SYMBOL",
           "name": "_list_notation_items"
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": "]"
-          }
+          "type": "SYMBOL",
+          "name": "close_list"
         }
       ]
     },
@@ -1560,22 +1503,16 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": "{"
-          }
+          "type": "SYMBOL",
+          "name": "open_curly"
         },
         {
           "type": "SYMBOL",
           "name": "_term"
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": "}"
-          }
+          "type": "SYMBOL",
+          "name": "close_curly"
         }
       ]
     },
@@ -1849,6 +1786,55 @@
             "value": "\""
           }
         ]
+      }
+    },
+    "open": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "("
+      }
+    },
+    "open_ct": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "("
+      }
+    },
+    "close": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": ")"
+      }
+    },
+    "open_list": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "["
+      }
+    },
+    "close_list": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "]"
+      }
+    },
+    "open_curly": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "{"
+      }
+    },
+    "close_curly": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "}"
       }
     },
     "comment": {
