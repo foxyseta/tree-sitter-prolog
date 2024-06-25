@@ -5,7 +5,7 @@
  */
 
 const // 6.5.1 Graphic character
-graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
+  graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
   // 6.5.2 Alphanumeric characters
   small_letter_char = /[a-z]/,
   capital_letter_char = /[A-Z]/,
@@ -92,7 +92,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   comment_text = repeat(char),
   single_line_comment = seq(
     end_line_comment_char,
-    comment_text,
+    /.*/,
     choice(new_line_char, end_of_file_char),
   ),
   bracketed_comment = seq(

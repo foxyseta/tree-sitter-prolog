@@ -1,27 +1,26 @@
-c:- % Hello!
-    % <- comment
+c. % Hello!
 % <- constant
+       % <- comment
 {
-% <- puncutation.bracket
+% <- punctuation.bracket
   [
-  % <- puncutation.bracket
+  % <- punctuation.bracket
     {
-    % <- puncutation.bracket
+    % <- punctuation.bracket
       true,
-      % <- atom
+      % <- constant
       %   ^ operator
       4,
       % <- number
-      %   ^ operator
+       %<- operator
       cat,
-      % <- atom
-      %   ^ operator
+      % <- constant
+      %  ^ operator
       -0.5e-2,
       % <- number
-      %   ^ operator
+      %      ^ operator
       log
-      % <- atom
-      %   ^ operator
+      % <- constant
     }
     % <- punctuation.bracket
   ]
@@ -34,6 +33,6 @@ function(a,c,a,b,c).
 % <- function
 %       ^ punctuation.bracket
 %        ^ constant
-%         ^ operator
+%         ^ punctuation.delimiter
 %                 ^ punctuation.bracket
 %                  ^ punctuation.delimiter
