@@ -5,14 +5,26 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "arg_list_separator",
+          "named": true
+        },
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -21,6 +33,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -79,6 +103,21 @@
     }
   },
   {
+    "type": "arg_list_separator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "comma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "atom",
     "named": true,
     "fields": {},
@@ -103,14 +142,26 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
+          "type": "end",
           "named": true
         },
         {
@@ -119,6 +170,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -185,15 +248,27 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
+          "type": "close_curly",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -202,6 +277,22 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
+          "named": true
+        },
+        {
+          "type": "open_curly",
           "named": true
         },
         {
@@ -264,15 +355,27 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
+          "named": true
+        },
+        {
+          "type": "end",
           "named": true
         },
         {
@@ -281,6 +384,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -339,9 +454,58 @@
     }
   },
   {
-    "type": "functional_notation",
+    "type": "empty_curly_brackets",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "close_curly",
+          "named": true
+        },
+        {
+          "type": "open_curly",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "empty_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "close_list",
+          "named": true
+        },
+        {
+          "type": "open_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "functional_notation",
+    "named": true,
+    "fields": {
+      "function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "atom",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -351,7 +515,11 @@
           "named": true
         },
         {
-          "type": "atom",
+          "type": "close",
+          "named": true
+        },
+        {
+          "type": "open_ct",
           "named": true
         }
       ]
@@ -363,14 +531,26 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
+          "type": "close_list",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -379,6 +559,26 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "list_notation_separator",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
+          "named": true
+        },
+        {
+          "type": "open_list",
           "named": true
         },
         {
@@ -437,19 +637,62 @@
     }
   },
   {
+    "type": "list_notation_separator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "comma",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "negative_number",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "number",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "open",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "open_ct",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "operation_1000xfy",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -458,6 +701,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -506,6 +761,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_1000xfy",
           "named": true
         },
         {
@@ -521,14 +780,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -537,6 +804,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -585,6 +864,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_1050xfy",
           "named": true
         },
         {
@@ -600,14 +883,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -616,6 +907,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -664,6 +967,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_1100xfy",
           "named": true
         },
         {
@@ -678,15 +985,23 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -695,6 +1010,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -743,6 +1070,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_1200fx",
           "named": true
         },
         {
@@ -758,14 +1089,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -774,6 +1113,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -822,6 +1173,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_1200xfx",
           "named": true
         },
         {
@@ -836,15 +1191,23 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -853,6 +1216,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -901,6 +1276,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_200fy",
           "named": true
         },
         {
@@ -916,14 +1295,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -932,6 +1319,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -980,6 +1379,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_200xfx",
           "named": true
         },
         {
@@ -995,14 +1398,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1011,6 +1422,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1059,6 +1482,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_200xfy",
           "named": true
         },
         {
@@ -1074,14 +1501,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1090,6 +1525,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1138,6 +1585,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_400yfx",
           "named": true
         },
         {
@@ -1153,14 +1604,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1169,6 +1628,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1217,6 +1688,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_500yfx",
           "named": true
         },
         {
@@ -1232,14 +1707,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1248,6 +1731,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1296,6 +1791,10 @@
         },
         {
           "type": "operation_900fy",
+          "named": true
+        },
+        {
+          "type": "operator_700xfx",
           "named": true
         },
         {
@@ -1310,15 +1809,23 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "atom",
           "named": true
         },
         {
+          "type": "close",
+          "named": true
+        },
+        {
           "type": "curly_bracketed_notation",
+          "named": true
+        },
+        {
+          "type": "double_quoted_list_notation",
           "named": true
         },
         {
@@ -1327,6 +1834,18 @@
         },
         {
           "type": "list_notation",
+          "named": true
+        },
+        {
+          "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open",
           "named": true
         },
         {
@@ -1378,7 +1897,26 @@
           "named": true
         },
         {
+          "type": "operator_900fy",
+          "named": true
+        },
+        {
           "type": "variable_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "operator_1000xfy",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comma",
           "named": true
         }
       ]
@@ -1387,7 +1925,17 @@
   {
     "type": "probability_label",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "source_file",
@@ -1409,67 +1957,11 @@
     }
   },
   {
-    "type": "\t",
-    "named": false
-  },
-  {
-    "type": "\n",
-    "named": false
-  },
-  {
-    "type": " ",
-    "named": false
-  },
-  {
-    "type": "!",
-    "named": false
-  },
-  {
-    "type": "\"",
-    "named": false
-  },
-  {
-    "type": "%",
-    "named": false
-  },
-  {
-    "type": "'",
-    "named": false
-  },
-  {
     "type": "(",
     "named": false
   },
   {
-    "type": ")",
-    "named": false
-  },
-  {
-    "type": "**",
-    "named": false
-  },
-  {
-    "type": "*/",
-    "named": false
-  },
-  {
-    "type": ",",
-    "named": false
-  },
-  {
     "type": "-",
-    "named": false
-  },
-  {
-    "type": "->",
-    "named": false
-  },
-  {
-    "type": ".",
-    "named": false
-  },
-  {
-    "type": "/*",
     "named": false
   },
   {
@@ -1481,47 +1973,87 @@
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
-    "type": "[",
-    "named": false
-  },
-  {
-    "type": "\\",
-    "named": false
-  },
-  {
-    "type": "\\+",
-    "named": false
-  },
-  {
-    "type": "]",
-    "named": false
-  },
-  {
-    "type": "^",
-    "named": false
-  },
-  {
-    "type": "_",
-    "named": false
-  },
-  {
-    "type": "`",
-    "named": false
-  },
-  {
     "type": "`,`",
     "named": false
   },
   {
-    "type": "empty_curly_brackets",
+    "type": "close",
     "named": true
   },
   {
-    "type": "empty_list",
+    "type": "close_curly",
+    "named": true
+  },
+  {
+    "type": "close_list",
+    "named": true
+  },
+  {
+    "type": "comma",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "double_quoted_list_notation",
+    "named": true
+  },
+  {
+    "type": "end",
+    "named": true
+  },
+  {
+    "type": "open_curly",
+    "named": true
+  },
+  {
+    "type": "open_list",
+    "named": true
+  },
+  {
+    "type": "operator_1050xfy",
+    "named": true
+  },
+  {
+    "type": "operator_1100xfy",
+    "named": true
+  },
+  {
+    "type": "operator_1200fx",
+    "named": true
+  },
+  {
+    "type": "operator_1200xfx",
+    "named": true
+  },
+  {
+    "type": "operator_200fy",
+    "named": true
+  },
+  {
+    "type": "operator_200xfx",
+    "named": true
+  },
+  {
+    "type": "operator_200xfy",
+    "named": true
+  },
+  {
+    "type": "operator_400yfx",
+    "named": true
+  },
+  {
+    "type": "operator_500yfx",
+    "named": true
+  },
+  {
+    "type": "operator_700xfx",
+    "named": true
+  },
+  {
+    "type": "operator_900fy",
     "named": true
   },
   {
@@ -1529,15 +2061,7 @@
     "named": true
   },
   {
-    "type": "{",
-    "named": false
-  },
-  {
     "type": "|",
-    "named": false
-  },
-  {
-    "type": "}",
     "named": false
   }
 ]

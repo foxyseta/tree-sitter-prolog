@@ -10,7 +10,7 @@
  */
 
 const // 6.5.1 Graphic character
-graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
+graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
   // 6.5.2 Alphanumeric characters
   small_letter_char = /[a-z]/,
   capital_letter_char = /[A-Z]/,
@@ -60,10 +60,17 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   space_char = " ",
   horizontal_tab_char = "\t",
   new_line_char = "\n",
+  /* resonable assumption: there are no NULL characters within the file. Use
+   * eof() instead once https://github.com/tree-sitter/tree-sitter/pull/2488 is
+   * in production (tree-sitter v0.23). The ISO specification does not deal with
+   * these, as it does not accept single line comments on the last line.
+   */
+  end_of_file_char = "\0",
   layout_char = choice(
     space_char,
     horizontal_tab_char,
     new_line_char,
+    end_of_file_char,
   ),
   // 6.5.5 Meta characters
   backslash_char = "\\",
@@ -76,41 +83,13 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
     double_quote_char,
     back_quote_char,
   ),
-  // 6.5 Processor character set
-  char = choice(
-    graphic_char,
-    alphanumeric_char,
-    solo_char,
-    layout_char,
-    meta_char,
-  ),
   // 6.4.1 Layout text
-  comment_open = "/*",
-  comment_close = "*/",
-  // rules matching empty text are unsupported by tree-siter
-  comment_text = repeat1(char),
   single_line_comment = seq(
     end_line_comment_char,
-    comment_text,
-    optional(new_line_char),
+    /.*/,
+    choice(new_line_char, end_of_file_char),
   ),
-  bracketed_comment = seq(
-    comment_open,
-    comment_text,
-    comment_close,
-  ),
-  comment = prec(
-    1,
-    choice(
-      single_line_comment,
-      bracketed_comment,
-    ),
-  ),
-  layout_text = choice(
-    layout_char,
-    comment,
-  ),
-  layout_text_sequence = repeat1(layout_text),
+  bracketed_comment = /\/\*(.|\n)*\*\//,
   // 6.4.2.1 Quoted characters
   meta_escape_sequence = seq(
     backslash_char,
@@ -274,8 +253,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   ),
   sign = choice(
     negative_sign_char,
-    // rules matching the empty string are unsupported by tree-sitter
-    positive_sign_char,
+    optional(positive_sign_char),
   ),
   exponent = seq(
     exponent_char,
@@ -318,71 +296,19 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   end_char = ".",
   end_token = end_char,
   // 6.4 Tokens
-  name = token(seq(
-    optional(layout_text_sequence),
-    name_token,
-  )),
-  variable = token(seq(
-    optional(layout_text_sequence),
-    variable_token,
-  )),
-  integer = token(seq(
-    optional(layout_text_sequence),
-    integer_token,
-  )),
-  float_number = token(seq(
-    optional(layout_text_sequence),
-    float_number_token,
-  )),
-  double_quoted_list = token(seq(
-    optional(layout_text_sequence),
-    double_quoted_list_token,
-  )),
-  open = token(seq(
-    optional(layout_text_sequence),
-    open_token,
-  )),
-  open_ct = token(open_token),
-  close = token(seq(
-    optional(layout_text_sequence),
-    close_token,
-  )),
-  open_list = token(seq(
-    optional(layout_text_sequence),
-    open_list_token,
-  )),
-  close_list = token(seq(
-    optional(layout_text_sequence),
-    close_list_token,
-  )),
-  open_curly = token(seq(
-    optional(layout_text_sequence),
-    open_curly_token,
-  )),
-  close_curly = token(seq(
-    optional(layout_text_sequence),
-    close_curly_token,
-  )),
-  ht_sep = token(seq(
-    optional(layout_text_sequence),
-    head_tail_separator_token,
-  )),
-  comma = token(seq(
-    optional(layout_text_sequence),
-    comma_token,
-  )),
-  end = seq(
-    optional(layout_text_sequence),
-    end_token,
-  );
+  name = token(name_token),
+  variable = token(variable_token),
+  integer = token(integer_token),
+  float_number = token(float_number_token),
+  double_quoted_list = token(double_quoted_list_token),
+  ht_sep = token(head_tail_separator_token);
 
 module.exports = grammar({
   name: "problog",
-  extras: _ => [
-    /\s/,
-    "\n",
-    "\r",
-    comment,
+  name: "prolog",
+  extras: $ => [
+    layout_char,
+    $.comment,
   ],
   superTypes: $ => [
     $._term,
@@ -397,12 +323,13 @@ module.exports = grammar({
           $.clause_term,
         ),
       ),
+    end: _ => token(seq(end_token)),
     // 6.2.1.1 Directives
     directive_term: $ =>
       seq(
         ":-",
         $._term,
-        end,
+        $.end,
       ),
     // 6.2.1.2 Clauses
     clause_term: $ =>
@@ -411,15 +338,17 @@ module.exports = grammar({
         seq(
           optional($.probability_label),
           $._term,
-          end,
+          $.end,
         ),
       ),
     probability_label: $ =>
-      prec(1,seq(
-        $._number,
-        optional(layout_text_sequence),
-        "::"),
+      // prec(
+      //  1,
+      seq(
+        $.number,
+        "::",
       ),
+    // ),
     // 6.3 Terms
     _term: $ =>
       choice(
@@ -433,22 +362,23 @@ module.exports = grammar({
         $._operator_notation,
         $.list_notation,
         $.curly_bracketed_notation,
+        $.double_quoted_list_notation,
       ),
     // 6.3.1 Atomic terms
     _atomic_term: $ =>
       choice(
-        $._number,
-        $._negative_number,
+        $.number,
+        $.negative_number,
         $.atom,
       ),
     // 6.3.1.1 Numbers
-    _number: _ =>
+    number: _ =>
       prec.left(choice(
         integer,
         float_number,
       )),
     // 6.3.1.2 Negative numbers
-    _negative_number: _ =>
+    negative_number: _ =>
       prec(
         200,
         seq(
@@ -466,26 +396,27 @@ module.exports = grammar({
         $.empty_list,
         $.empty_curly_brackets,
       ),
-    empty_list: _ => token(seq(open_list, close_list)),
-    empty_curly_brackets: _ => token(seq(open_curly, close_curly)),
+    empty_list: $ => seq($.open_list, $.close_list),
+    empty_curly_brackets: $ => seq($.open_curly, $.close_curly),
     // 6.3.2 Variables
     variable_term: _ => variable,
     // 6.3.3 Compound terms - functional notation
     functional_notation: $ =>
       seq(
-        $.atom,
-        token(seq(optional(layout_text_sequence), open_ct)),
+        field("function", $.atom),
+        $.open_ct,
         $.arg_list,
-        close,
+        $.close,
       ),
     arg_list: $ =>
       prec.right(seq(
         $._arg,
         repeat(seq(
-          comma,
+          $.arg_list_separator,
           $._arg,
         )),
       )),
+    arg_list_separator: $ => $.comma,
     // 6.3.3.1 Arguments
     _arg: $ =>
       prec(
@@ -501,15 +432,16 @@ module.exports = grammar({
     _operator_notation: $ =>
       choice(
         seq(
-          open,
+          $.open,
           $._term,
-          close,
+          $.close,
         ),
-        seq(
-          open_ct,
-          $._term,
-          close,
-        ),
+        // ISO rule removed to prevent ambiguity:
+        // seq(
+        //  $.open_ct,
+        //  $._term,
+        //  $.close,
+        // ),
         // Treesitter/Prolog ISO precedences are inverted.
         // Non-associative operators are set to left-associative
         $.operation_1200xfx,
@@ -525,135 +457,161 @@ module.exports = grammar({
         $.operation_200xfy,
         $.operation_200fy,
       ),
+    operator_1200xfx: _ => /(:\-)|(\-\->)/,
     operation_1200xfx: $ =>
       prec.left(
         1,
         seq(
           $._term,
-          /(:\-)|(\-\->)/,
+          $.operator_1200xfx,
           $._term,
         ),
       ),
+    operator_1200fx: _ => /(:\-)|(\?-)/,
     operation_1200fx: $ =>
       prec.left(
         1,
         seq(
-          /(:\-)|(\?-)/,
+          $.operator_1200fx,
           $._term,
         ),
       ),
+    operator_1100xfy: _ => ";",
     operation_1100xfy: $ =>
       prec.right(
         101,
         seq(
           $._term,
-          ";",
+          $.operator_1100xfy,
           $._term,
         ),
       ),
+    operator_1050xfy: _ => "->",
     operation_1050xfy: $ =>
       prec.right(
         151,
         seq(
           $._term,
-          "->",
+          $.operator_1050xfy,
           $._term,
         ),
       ),
+    operator_1000xfy: $ => choice("`,`", $.comma),
     operation_1000xfy: $ =>
       prec.right(
         201,
         seq(
           $._term,
-          choice("`,`", comma),
+          $.operator_1000xfy,
           $._term,
         ),
       ),
+    operator_900fy: _ => "\\+",
     operation_900fy: $ =>
       prec.right(
         301,
         seq(
-          "\\+",
+          $.operator_900fy,
           $._term,
         ),
       ),
+    operator_700xfx: _ => /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/,
     operation_700xfx: $ =>
       prec.left(
         501,
         seq(
           $._term,
-          /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/,
+          $.operator_700xfx,
           $._term,
         ),
       ),
+    operator_500yfx: _ => /\+|\-|\/\\|\\\//,
     operation_500yfx: $ =>
       prec.left(
         701,
         seq(
           $._term,
-          /\+|\-|\/\\|\\\//,
+          $.operator_500yfx,
           $._term,
         ),
       ),
+    operator_400yfx: _ => /\*|\/|\/\/|rem|mod|<<|>>/,
     operation_400yfx: $ =>
       prec.left(
         801,
         seq(
           $._term,
-          /\*|\/|\/\/|rem|mod|<<|>>/,
+          $.operator_400yfx,
           $._term,
         ),
       ),
+    operator_200xfx: _ => "**",
     operation_200xfx: $ =>
       prec.left(
         1001,
         seq(
           $._term,
-          "**",
+          $.operator_200xfx,
           $._term,
         ),
       ),
+    operator_200xfy: _ => "^",
     operation_200xfy: $ =>
       prec.right(
         1001,
         seq(
           $._term,
-          "^",
+          $.operator_200xfy,
           $._term,
         ),
       ),
+    operator_200fy: _ => /\-\\/,
     operation_200fy: $ =>
       prec.right(
         1001,
         seq(
-          /\-\\/,
+          $.operator_200fy,
           $._term,
         ),
       ),
     // 6.3.5 Compound terms - list notation
     list_notation: $ =>
       seq(
-        open_list,
+        $.open_list,
         $._list_notation_items,
-        close_list,
+        $.close_list,
       ),
     _list_notation_items: $ =>
       choice(
         prec.right(seq(
           $._arg,
           repeat(seq(
-            comma,
+            $.list_notation_separator,
             $._arg,
           )),
         )),
         seq($._arg, ht_sep, $._arg),
       ),
+    list_notation_separator: $ => $.comma,
     // 6.3.6 Compount terms - curly bracketed forms
     curly_bracketed_notation: $ =>
       seq(
-        open_curly,
+        $.open_curly,
         $._term,
-        close_curly,
+        $.close_curly,
       ),
+    // 6.3.7 Double quoted list notation
+    double_quoted_list_notation: _ => double_quoted_list,
+    // 6.4 Tokens
+    open: _ => token(open_token),
+    open_ct: _ => token(open_token),
+    close: _ => token(close_token),
+    open_list: _ => token(open_list_token),
+    close_list: _ => token(close_list_token),
+    open_curly: _ => token(open_curly_token),
+    close_curly: _ => token(close_curly_token),
+    comma: _ => token(comma_token),
+    // 6.4.1 Layout text
+    comment: _ => token(choice(single_line_comment, bracketed_comment)),
   },
 });

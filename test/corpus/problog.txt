@@ -8,8 +8,10 @@ Clause 1
 
 (source_file
   (clause_term
-    (probability_label)
-    (atom)))
+    (probability_label
+      (number))
+    (atom)
+    (end)))
 
 ==================
 Clause 2
@@ -22,10 +24,13 @@ Clause 2
 
 (source_file
   (clause_term
-    (probability_label)
+    (probability_label
+      (number))
     (operation_1200xfx
       (atom)
-      (atom))))
+      (operator_1200xfx)
+      (atom))
+    (end)))
 
 ====================
 DCG
@@ -38,7 +43,10 @@ DCG
 
 (source_file
   (clause_term
-    (probability_label)
+    (probability_label
+      (number))
     (operation_1200xfx
       (atom)
-      (atom))))
+      (operator_1200xfx)
+      (atom))
+    (end)))
