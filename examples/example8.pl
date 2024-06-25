@@ -14,8 +14,8 @@ g(module_predicate):-
 
 a,a.
 
-v(compount_term) :-
-  v{g_v}.
+v(compound_term) :-
+  {g_v}.
 
 v:-
   V = {x_1,y_2}.C.

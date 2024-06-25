@@ -240,11 +240,6 @@
     }
   },
   {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "curly_bracketed_notation",
     "named": true,
     "fields": {},
@@ -1972,6 +1967,10 @@
   },
   {
     "type": "comma",
+    "named": true
+  },
+  {
+    "type": "comment",
     "named": true
   },
   {

@@ -5,7 +5,7 @@
  */
 
 const // 6.5.1 Graphic character
-  graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
+graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
   // 6.5.2 Alphanumeric characters
   small_letter_char = /[a-z]/,
   capital_letter_char = /[A-Z]/,
@@ -78,28 +78,13 @@ const // 6.5.1 Graphic character
     double_quote_char,
     back_quote_char,
   ),
-  // 6.5 Processor character set
-  char = choice(
-    graphic_char,
-    alphanumeric_char,
-    solo_char,
-    layout_char,
-    meta_char,
-  ),
   // 6.4.1 Layout text
-  comment_open = "/*",
-  comment_close = "*/",
-  comment_text = repeat(char),
   single_line_comment = seq(
     end_line_comment_char,
     /.*/,
     choice(new_line_char, end_of_file_char),
   ),
-  bracketed_comment = seq(
-    comment_open,
-    comment_text,
-    comment_close,
-  ),
+  bracketed_comment = /\/\*(.|\n)*\*\//,
   // 6.4.2.1 Quoted characters
   meta_escape_sequence = seq(
     backslash_char,
@@ -437,11 +422,11 @@ module.exports = grammar({
           $.close,
         ),
         // ISO rule removed to prevent ambiguity:
-        //seq(
+        // seq(
         //  $.open_ct,
         //  $._term,
         //  $.close,
-        //),
+        // ),
         // Treesitter/Prolog ISO precedences are inverted.
         // Non-associative operators are set to left-associative
         $.operation_1200xfx,
