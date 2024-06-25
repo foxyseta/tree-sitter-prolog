@@ -64,6 +64,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
     space_char,
     horizontal_tab_char,
     new_line_char,
+    end_of_file_char,
   ),
   // 6.5.5 Meta characters
   backslash_char = "\\",
@@ -88,17 +89,16 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   comment_open = "/*",
   comment_close = "*/",
   comment_text = repeat(char),
-  single_line_comment = token(seq(
+  single_line_comment = seq(
     end_line_comment_char,
     comment_text,
     choice(new_line_char, end_of_file_char),
-  )),
-  bracketed_comment = token(seq(
+  ),
+  bracketed_comment = seq(
     comment_open,
     comment_text,
     comment_close,
-  )),
-  comment = token(choice(single_line_comment, bracketed_comment)),
+  ),
   // 6.4.2.1 Quoted characters
   meta_escape_sequence = seq(
     backslash_char,
@@ -325,7 +325,7 @@ module.exports = grammar({
   name: "prolog",
   extras: $ => [
     layout_char,
-    comment,
+    $.comment,
   ],
   superTypes: $ => [
     $._term,
@@ -340,6 +340,7 @@ module.exports = grammar({
           $.clause_term,
         ),
       ),
+    comment: _ => token(choice(single_line_comment, bracketed_comment)),
     // 6.2.1.1 Directives
     directive_term: $ =>
       seq(

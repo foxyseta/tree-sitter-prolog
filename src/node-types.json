@@ -1710,6 +1710,10 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "double_quoted_list_notation",
     "named": true
   },
