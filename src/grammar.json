@@ -1022,11 +1022,8 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "TOKEN",
-                  "content": {
-                    "type": "STRING",
-                    "value": ","
-                  }
+                  "type": "SYMBOL",
+                  "name": "arg_list_separator"
                 },
                 {
                   "type": "SYMBOL",
@@ -1037,6 +1034,10 @@
           }
         ]
       }
+    },
+    "arg_list_separator": {
+      "type": "SYMBOL",
+      "name": "comma"
     },
     "_arg": {
       "type": "PREC",
@@ -1229,11 +1230,8 @@
           "value": "`,`"
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": ","
-          }
+          "type": "SYMBOL",
+          "name": "comma"
         }
       ]
     },
@@ -1461,11 +1459,8 @@
                   "type": "SEQ",
                   "members": [
                     {
-                      "type": "TOKEN",
-                      "content": {
-                        "type": "STRING",
-                        "value": ","
-                      }
+                      "type": "SYMBOL",
+                      "name": "list_notation_separator"
                     },
                     {
                       "type": "SYMBOL",
@@ -1498,6 +1493,10 @@
           ]
         }
       ]
+    },
+    "list_notation_separator": {
+      "type": "SYMBOL",
+      "name": "comma"
     },
     "curly_bracketed_notation": {
       "type": "SEQ",
@@ -1835,6 +1834,13 @@
       "content": {
         "type": "STRING",
         "value": "}"
+      }
+    },
+    "comma": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": ","
       }
     },
     "comment": {

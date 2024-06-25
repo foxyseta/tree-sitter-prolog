@@ -35,6 +35,10 @@
  (close_curly)
 ] @punctuation.bracket
 
+(arg_list_separator) @punctuation.delimiter
+
+(list_notation_separator) @punctuation.delimiter
+
 (end) @punctuation.delimiter
 
 (double_quoted_list_notation) @string

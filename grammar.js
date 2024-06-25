@@ -311,8 +311,7 @@ graphic_char = /#\$\&\*\+-\.\/:<=>\?@\^~/,
   integer = token(integer_token),
   float_number = token(float_number_token),
   double_quoted_list = token(double_quoted_list_token),
-  ht_sep = token(head_tail_separator_token),
-  comma = token(comma_token);
+  ht_sep = token(head_tail_separator_token);
 
 module.exports = grammar({
   name: "prolog",
@@ -413,10 +412,11 @@ module.exports = grammar({
       prec.right(seq(
         $._arg,
         repeat(seq(
-          comma,
+          $.arg_list_separator,
           $._arg,
         )),
       )),
+    arg_list_separator: $ => $.comma,
     // 6.3.3.1 Arguments
     _arg: $ =>
       prec(
@@ -496,7 +496,7 @@ module.exports = grammar({
           $._term,
         ),
       ),
-    operator_1000xfy: _ => choice("`,`", comma),
+    operator_1000xfy: $ => choice("`,`", $.comma),
     operation_1000xfy: $ =>
       prec.right(
         201,
@@ -586,12 +586,13 @@ module.exports = grammar({
         prec.right(seq(
           $._arg,
           repeat(seq(
-            comma,
+            $.list_notation_separator,
             $._arg,
           )),
         )),
         seq($._arg, ht_sep, $._arg),
       ),
+    list_notation_separator: $ => $.comma,
     // 6.3.6 Compount terms - curly bracketed forms
     curly_bracketed_notation: $ =>
       seq(
@@ -609,6 +610,7 @@ module.exports = grammar({
     close_list: _ => token(close_list_token),
     open_curly: _ => token(open_curly_token),
     close_curly: _ => token(close_curly_token),
+    comma: _ => token(comma_token),
     // 6.4.1 Layout text
     comment: _ => token(choice(single_line_comment, bracketed_comment)),
   },

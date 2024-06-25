@@ -8,6 +8,10 @@
       "required": true,
       "types": [
         {
+          "type": "arg_list_separator",
+          "named": true
+        },
+        {
           "type": "atom",
           "named": true
         },
@@ -93,6 +97,21 @@
         },
         {
           "type": "variable_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "arg_list_separator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "comma",
           "named": true
         }
       ]
@@ -539,6 +558,10 @@
           "named": true
         },
         {
+          "type": "list_notation_separator",
+          "named": true
+        },
+        {
           "type": "negative_number",
           "named": true
         },
@@ -604,6 +627,21 @@
         },
         {
           "type": "variable_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_notation_separator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "comma",
           "named": true
         }
       ]
@@ -1868,7 +1906,17 @@
   {
     "type": "operator_1000xfy",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comma",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "source_file",
@@ -1894,10 +1942,6 @@
     "named": false
   },
   {
-    "type": ",",
-    "named": false
-  },
-  {
     "type": "-",
     "named": false
   },
@@ -1919,6 +1963,10 @@
   },
   {
     "type": "close_list",
+    "named": true
+  },
+  {
+    "type": "comma",
     "named": true
   },
   {
