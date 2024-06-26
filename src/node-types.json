@@ -28,15 +28,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -45,6 +37,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -169,15 +165,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -186,6 +174,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -276,15 +268,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -293,6 +277,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -387,15 +375,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -404,6 +384,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -566,15 +550,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -587,6 +563,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -687,6 +667,25 @@
     }
   },
   {
+    "type": "number",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "float_number",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "open",
     "named": true,
     "fields": {}
@@ -721,15 +720,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -738,6 +729,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -828,15 +823,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -845,6 +832,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -935,15 +926,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -952,6 +935,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1042,15 +1029,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1059,6 +1038,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1149,15 +1132,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1166,6 +1141,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1256,15 +1235,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1273,6 +1244,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1363,15 +1338,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1380,6 +1347,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1470,15 +1441,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1487,6 +1450,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1577,15 +1544,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1594,6 +1553,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1684,15 +1647,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1701,6 +1656,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1791,15 +1750,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1808,6 +1759,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {
@@ -1898,15 +1853,7 @@
           "named": true
         },
         {
-          "type": "float_number",
-          "named": true
-        },
-        {
           "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
           "named": true
         },
         {
@@ -1915,6 +1862,10 @@
         },
         {
           "type": "negative_number",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {

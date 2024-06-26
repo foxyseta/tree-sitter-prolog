@@ -110,7 +110,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_number"
+          "name": "number"
         },
         {
           "type": "SYMBOL",
@@ -122,7 +122,7 @@
         }
       ]
     },
-    "_number": {
+    "number": {
       "type": "PREC_LEFT",
       "value": 0,
       "content": {
