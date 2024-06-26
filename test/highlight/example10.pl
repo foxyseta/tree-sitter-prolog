@@ -8,7 +8,7 @@ c. % Hello!
     {
     % <- punctuation.bracket
       true,
-      % <- constant
+      % <- boolean
       %   ^ operator
       4,
       % <- number
@@ -17,7 +17,7 @@ c. % Hello!
       % <- constant
       %  ^ operator
       -0.5e-2,
-      % <- number
+      % <- number.float
       %      ^ operator
       log
       % <- constant
@@ -30,7 +30,7 @@ c. % Hello!
       % ^ comment
 
 function(a,c,a,b,c).
-% <- function
+% <- function.call
 %       ^ punctuation.bracket
 %        ^ constant
 %         ^ punctuation.delimiter

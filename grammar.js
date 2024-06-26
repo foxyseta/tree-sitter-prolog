@@ -293,8 +293,6 @@ graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
   // 6.4 Tokens
   name = token(name_token),
   variable = token(variable_token),
-  integer = token(integer_token),
-  float_number = token(float_number_token),
   double_quoted_list = token(double_quoted_list_token),
   ht_sep = token(head_tail_separator_token);
 
@@ -352,25 +350,25 @@ module.exports = grammar({
     // 6.3.1 Atomic terms
     _atomic_term: $ =>
       choice(
-        $.number,
+        $._number,
         $.negative_number,
         $.atom,
       ),
     // 6.3.1.1 Numbers
-    number: _ =>
+    _number: $ =>
       prec.left(choice(
-        integer,
-        float_number,
+        $.integer,
+        $.float_number,
       )),
     // 6.3.1.2 Negative numbers
-    negative_number: _ =>
+    negative_number: $ =>
       prec(
         200,
         seq(
           "-",
           choice(
-            integer,
-            float_number,
+            $.integer,
+            $.float_number,
           ),
         ),
       ),
@@ -596,6 +594,8 @@ module.exports = grammar({
     open_curly: _ => token(open_curly_token),
     close_curly: _ => token(close_curly_token),
     comma: _ => token(comma_token),
+    integer: _ => token(integer_token),
+    float_number: _ => token(float_number_token),
     // 6.4.1 Layout text
     comment: _ => token(choice(single_line_comment, bracketed_comment)),
   },

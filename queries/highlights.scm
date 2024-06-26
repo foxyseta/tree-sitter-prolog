@@ -2,13 +2,26 @@
 
 (atom) @constant
 
+((atom) @boolean
+  (#eq? @boolean "true"))
+
+((atom) @boolean
+  (#eq? @boolean "false"))
+
 (functional_notation
-  function: (atom) @function)
+  function: (atom) @function.call)
 
 [
-  (number)
-  (negative_number)
+  (integer)
+  (negative_number
+    (integer))
 ] @number
+
+[
+  (float_number)
+  (negative_number
+    (float_number))
+] @number.float
 
 [
   (operator_1200xfx)
