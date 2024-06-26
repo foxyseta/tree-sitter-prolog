@@ -9,6 +9,41 @@ currently have their own grammar besides ISO Prolog.
 Feel free to contribute with new ones! It is super easy, as you can just extend
 an existing one.
 
+## Project structure
+
+The project uses pnpm as its package manager. Files `package.json` and
+`pnpm-lock.yaml` can be found in the root folder.
+
+### Grammars
+
+A `grammar.js` file for a Prolog extension `xxx` is located at
+`grammars/xxx/grammar.js`. They are formatted using dprint, according to
+`grammars/dprint.json`.
+
+### Parsers
+
+Parser sources for a Prolog extension `xxx` are located at `grammars/xxx/src/`.
+If you are not using the `build*` pnpm scripts and are manually invoking the
+`tree-sitter generate` command instead, make sure your current directory is
+`grammars/xxx/`.
+
+> [!WARNING]
+> When updating parser sources with `tree-sitter generate`, use the
+> `--no-bindings` flag. Tree-sitter is currently unable to generate correct
+> bindings for repositories with more than one grammar. The `build*` pnpm
+> scripts will always use such flag.
+
+### Queries
+
+If a `.scm` file does not need modifications between two or more grammars, it
+can be found in `queries/`. Otherwise, its version for grammar `xxx` is located
+at `grammars/xxx/queries/`.
+
+### Tests
+
+Corpus tests for a grammar `xxx` are located at `grammars/xxx/tests/corpus/`.
+Highlight tests of all grammars are located at `tests/highlight/`.
+
 ## References
 
 ### ISO Prolog

@@ -301,7 +301,7 @@ graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
   double_quoted_list = token(double_quoted_list_token),
   ht_sep = token(head_tail_separator_token);
 
-module.exports = grammar(require('../prolog/grammar'), {
+module.exports = grammar(require("../prolog/grammar"), {
   name: "problog",
   rules: {
     // 6.2.1.2 Clauses
