@@ -1,0 +1,65 @@
+==================
+Clause 1
+==================
+
+0.3::test_predicate.
+
+---
+
+(source_file
+  (clause_term
+    (probability_label
+      (probability
+        (float_number)))
+    (atom)
+    (end)))
+
+==================
+Clause 2
+==================
+
+test_predicate:-
+  true.
+
+---
+
+(source_file
+  (clause_term
+    (operation_1200xfx
+      (atom)
+      (operator_1200xfx)
+      (atom))
+    (end)))
+
+====================
+DCG
+====================
+
+1::test_dcg-->
+  true.
+
+---
+
+(source_file
+  (clause_term
+    (probability_label
+      (probability
+        (integer)))
+    (operation_1200xfx
+      (atom)
+      (operator_1200xfx)
+      (atom))
+    (end)))
+
+====================
+Directive
+====================
+
+:-test_predicate.
+
+---
+
+(source_file
+  (directive_term
+    (atom)
+    (end)))
