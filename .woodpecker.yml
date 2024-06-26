@@ -10,12 +10,14 @@ steps:
       - tree-sitter init-config
       # ISO Prolog
       - cd grammars/prolog/
-      - tree-sitter generate
+      - tree-sitter generate --no-bindings
       - tree-sitter test && tree-sitter parse examples/*.pl --quiet --time
       # Problog
       - cd grammars/problog/
-      - tree-sitter generate
+      - tree-sitter generate --no-bindings
       - tree-sitter test && tree-sitter parse examples/*.pl --quiet --time
+      # Syntax highlighting
+      - cd ../.. && tree-sitter test
   diff:
     when:
       - event: push

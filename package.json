@@ -20,7 +20,8 @@
     "build": "pnpm run build-prolog && pnpm run build-problog",
     "build-prolog": "cd grammars/prolog && tree-sitter generate --no-bindings && prebuildify --napi --electron-compat",
     "build-problog": "cd grammars/problog && tree-sitter generate --no-bindings && prebuildify --napi --electron-compat",
-    "test": "pnpm run test-prolog && pnpm run test-problog",
+    "test": "pnpm run test-prolog && pnpm run test-problog && pnpm run test-highlight",
+    "test-highlight": "tree-sitter test",
     "test-prolog": "cd grammars/prolog && tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
     "test-prolog": "cd grammars/problog && tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
     "prebuildify": "prebuildify --napi --strip"
@@ -60,6 +61,7 @@
         "pro",
         "P"
       ],
+      "content-regex": "::",
       "injection-regex": "problog",
       "highlights": "grammars/problog/queries/highlights.scm"
     }
