@@ -11,9 +11,9 @@ license = "MIT"
 build = "bindings/rust/build.rs"
 include = [
   "bindings/rust/*",
-  "grammar.js",
-  "queries/*",
-  "src/*",
+  "grammars/*/grammar.js",
+  "grammars/*/queries/*",
+  "grammars/*/src/*",
 ]
 
 [lib]

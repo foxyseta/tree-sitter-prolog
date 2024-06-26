@@ -8,6 +8,6 @@ import "C"
 import "unsafe"
 
 // Get the tree-sitter Language for this grammar.
-func Language() unsafe.Pointer {
+func LanguageProlog() unsafe.Pointer {
 	return unsafe.Pointer(C.tree_sitter_prolog())
 }

@@ -3,6 +3,8 @@ VERSION := 0.0.1
 LANGUAGE_NAME := tree-sitter-prolog
 
 # repository
+PROLOG_DIR := grammars/prolog
+PROBLOG_DIR := grammars/problog
 SRC_DIR := src
 
 PARSER_REPO_URL := $(shell git -C $(SRC_DIR) remote get-url origin 2>/dev/null)
@@ -83,8 +85,11 @@ $(LANGUAGE_NAME).pc: bindings/c/$(LANGUAGE_NAME).pc.in
 		-e 's|=$(PREFIX)|=$${prefix}|' \
 		-e 's|@PREFIX@|$(PREFIX)|' $< > $@
 
-$(PARSER): $(SRC_DIR)/grammar.json
-	$(TS) generate --no-bindings $^
+$(PROLOG_DIR)/$(PARSER): $(PROLOG_DIR)$(SRC_DIR)/grammar.json
+	cd $(PROLOG_DIR) && $(TS) generate --no-bindings $^
+
+$(PROBLOG_DIR)/$(PARSER): $(PROBLOG_DIR)$(SRC_DIR)/grammar.json
+	cd $(PROBLOG_DIR) && $(TS) generate --no-bindings $^
 
 install: all
 	install -d '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter '$(DESTDIR)$(PCLIBDIR)' '$(DESTDIR)$(LIBDIR)'

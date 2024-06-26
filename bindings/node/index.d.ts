@@ -24,5 +24,5 @@ type Language = {
   nodeTypeInfo: NodeInfo[];
 };
 
-declare const language: Language;
-export = language;
+export const prolog: Language;
+export const problog: Language;

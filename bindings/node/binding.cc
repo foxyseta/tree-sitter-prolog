@@ -3,6 +3,7 @@
 typedef struct TSLanguage TSLanguage;
 
 extern "C" TSLanguage *tree_sitter_prolog();
+extern "C" TSLanguage *tree_sitter_problog();
 
 // "tree-sitter", "language" hashed with BLAKE2
 const napi_type_tag LANGUAGE_TYPE_TAG = {
@@ -10,10 +11,20 @@ const napi_type_tag LANGUAGE_TYPE_TAG = {
 };
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    exports["name"] = Napi::String::New(env, "prolog");
-    auto language = Napi::External<TSLanguage>::New(env, tree_sitter_prolog());
-    language.TypeTag(&LANGUAGE_TYPE_TAG);
-    exports["language"] = language;
+    auto prolog_exports = Napi::Object::New(env);
+    prolog_exports["name"] = Napi::String::New(env, "prolog");
+    auto prolog_language = Napi::External<TSLanguage>::New(env, tree_sitter_prolog());
+    prolog_language.TypeTag(&LANGUAGE_TYPE_TAG);
+    prolog_exports["language"] = prolog_language;
+    exports["prolog"] = prolog_exports;
+
+    auto problog_exports = Napi::Object::New(env);
+    interface_exports["name"] = Napi::String::New(env, "problog");
+    auto problog_language = Napi::External<TSLanguage>::New(env, tree_sitter_problog());
+    interface_language.TypeTag(&LANGUAGE_TYPE_TAG);
+    problog_exports["language"] = problog_language;
+    exports["problog"] = problog_exports;
+
     return exports;
 }
 

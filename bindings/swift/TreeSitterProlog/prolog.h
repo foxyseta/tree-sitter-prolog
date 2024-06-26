@@ -8,6 +8,7 @@ extern "C" {
 #endif
 
 const TSLanguage *tree_sitter_prolog(void);
+const TSLanguage *tree_sitter_problog(void);
 
 #ifdef __cplusplus
 }

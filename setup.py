@@ -35,7 +35,8 @@ setup(
             name="_binding",
             sources=[
                 "bindings/python/tree_sitter_prolog/binding.c",
-                "src/parser.c",
+                "grammars/prolog/src/parser.c",
+                "grammars/problog/src/parser.c",
                 # NOTE: if your language uses an external scanner, add it here.
             ],
             extra_compile_args=[

@@ -1,5 +1,5 @@
 "Prolog grammar for tree-sitter"
 
-from ._binding import language
+from ._binding import prolog, problog
 
-__all__ = ["language"]
+__all__ = ["prolog", "problog"]
