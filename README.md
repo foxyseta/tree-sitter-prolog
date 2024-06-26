@@ -4,8 +4,10 @@
 
 Prolog grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 The ["References" section](#references) lists the various extensions that
-currently have their own grammar beside ISO Prolog. Feel free to contribute with
-new ones! It is super easy, as you can just extend an existing one.
+currently have their own grammar besides ISO Prolog.
+
+Feel free to contribute with new ones! It is super easy, as you can just extend
+an existing one.
 
 ## References
 

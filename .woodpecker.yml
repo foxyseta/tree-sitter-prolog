@@ -13,7 +13,7 @@ steps:
       - tree-sitter generate --no-bindings
       - tree-sitter test && tree-sitter parse examples/*.pl --quiet --time
       # Problog
-      - cd grammars/problog/
+      - cd ../../grammars/problog/
       - tree-sitter generate --no-bindings
       - tree-sitter test && tree-sitter parse examples/*.pl --quiet --time
       # Syntax highlighting
