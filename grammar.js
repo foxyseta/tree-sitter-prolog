@@ -303,7 +303,6 @@ graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
 
 module.exports = grammar({
   name: "problog",
-  name: "prolog",
   extras: $ => [
     layout_char,
     $.comment,
