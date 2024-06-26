@@ -9,7 +9,7 @@
 
 (list_notation
   (open_list) @indent.begin
-  (close_list) @indent.end
+  (close_list) @indent.end)
 
 (curly_bracketed_notation
   (open_curly) @indent.begin
