@@ -9,7 +9,7 @@
     {
     % <- punctuation.bracket
       true,
-      % <- constant
+      % <- boolean
       %   ^ operator
       4,
       % <- number
@@ -18,7 +18,7 @@
       % <- constant
       %  ^ operator
       -0.5e-2,
-      % <- number
+      % <- number.float
       %      ^ operator
       log
       % <- constant
@@ -32,7 +32,7 @@
 
 0.6::function(a,c,a,b,c).
 % <- attribute
-%    ^ function
+%    ^ function.call
 %            ^ punctuation.bracket
 %             ^ constant
 %              ^ punctuation.delimiter
