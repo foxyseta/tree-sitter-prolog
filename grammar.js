@@ -350,12 +350,12 @@ module.exports = grammar({
     // 6.3.1 Atomic terms
     _atomic_term: $ =>
       choice(
-        $._number,
+        $.number,
         $.negative_number,
         $.atom,
       ),
     // 6.3.1.1 Numbers
-    _number: $ =>
+    number: $ =>
       prec.left(choice(
         $.integer,
         $.float_number,
