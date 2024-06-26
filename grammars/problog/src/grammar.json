@@ -75,36 +75,6 @@
         ]
       }
     },
-    "probability_label": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "probability"
-        },
-        {
-          "type": "STRING",
-          "value": "::"
-        }
-      ]
-    },
-    "probability": {
-      "type": "PREC_LEFT",
-      "value": 0,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "integer"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "float_number"
-          }
-        ]
-      }
-    },
     "_term": {
       "type": "CHOICE",
       "members": [
@@ -1777,6 +1747,36 @@
           {
             "type": "PATTERN",
             "value": "\\/\\*(.|\\n)*\\*\\/"
+          }
+        ]
+      }
+    },
+    "probability_label": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "probability"
+        },
+        {
+          "type": "STRING",
+          "value": "::"
+        }
+      ]
+    },
+    "probability": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "integer"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "float_number"
           }
         ]
       }
