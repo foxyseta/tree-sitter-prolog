@@ -8,6 +8,12 @@ steps:
     image: codeberg.org/foxy/tree-sitter:0.2.0
     commands:
       - tree-sitter init-config
+      # ISO Prolog
+      - cd grammars/prolog/
+      - tree-sitter generate
+      - tree-sitter test && tree-sitter parse examples/*.pl --quiet --time
+      # Problog
+      - cd grammars/problog/
       - tree-sitter generate
       - tree-sitter test && tree-sitter parse examples/*.pl --quiet --time
   diff:

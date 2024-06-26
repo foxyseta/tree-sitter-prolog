@@ -2,12 +2,27 @@
   "name": "tree-sitter-prolog",
   "version": "1.0.0",
   "description": "Tree-sitter grammar for ISO Prolog",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "prolog",
+    "problog"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/tree-sitter-prolog.git"
+  },
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
-    "build": "tree-sitter generate && prebuildify --napi --electron-compat && prebuildify --napi --electron-compat --platform=windows",
     "install": "node-gyp-build",
-    "test": "tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
+    "build": "pnpm run build-prolog && pnpm run build-problog",
+    "build-prolog": "cd grammars/prolog && tree-sitter generate --no-bindings && prebuildify --napi --electron-compat",
+    "build-problog": "cd grammars/problog && tree-sitter generate --no-bindings && prebuildify --napi --electron-compat",
+    "test": "pnpm run test-prolog && pnpm run test-problog",
+    "test-prolog": "cd grammars/prolog && tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
+    "test-prolog": "cd grammars/problog && tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
     "prebuildify": "prebuildify --napi --strip"
   },
   "author": "foxy@teapot.ovh",
@@ -28,13 +43,25 @@
   "tree-sitter": [
     {
       "scope": "source.prolog",
+      "path": "grammars/prolog",
       "file-types": [
         "pl",
         "pro",
         "P"
       ],
       "injection-regex": "prolog",
-      "highlights": "queries/highlights.scm"
+      "highlights": "grammars/prolog/queries/highlights.scm"
+    },
+    {
+      "scope": "source.problog",
+      "path": "grammars/problog",
+      "file-types": [
+        "pl",
+        "pro",
+        "P"
+      ],
+      "injection-regex": "problog",
+      "highlights": "grammars/problog/queries/highlights.scm"
     }
   ],
   "devDependencies": {
@@ -42,11 +69,10 @@
     "tree-sitter-cli": "^0.20.8"
   },
   "files": [
-    "grammar.js",
     "binding.gyp",
     "prebuilds/**",
     "bindings/node/*",
-    "queries/*",
-    "src/**"
+    "grammars/**",
+    "queries/*"
   ]
 }
