@@ -4,8 +4,12 @@
  * Standardization, Geneva."
  */
 
-const // 6.5.1 Graphic character
-graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
+const fields = {
+    function: "function",
+    operator: "operator",
+  },
+  // 6.5.1 Graphic character
+  graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
   // 6.5.2 Alphanumeric characters
   small_letter_char = /[a-z]/,
   capital_letter_char = /[A-Z]/,
@@ -349,7 +353,7 @@ module.exports = grammar({
     _compound_term: $ =>
       choice(
         $.functional_notation,
-        $._operator_notation,
+        $.operator_notation,
         $.list_notation,
         $.curly_bracketed_notation,
         $.double_quoted_list_notation,
@@ -381,7 +385,7 @@ module.exports = grammar({
     // 6.3.3 Compound terms - functional notation
     functional_notation: $ =>
       seq(
-        field("function", $.atom),
+        field(fields.function, $.atom),
         $.open_ct,
         $.arg_list,
         $.close,
@@ -407,7 +411,7 @@ module.exports = grammar({
     // 6.3.4 Compound terms - operator notation
     // 6.3.4.1 Operand
     // 6.3.4.2 Operators as functors
-    _operator_notation: $ =>
+    operator_notation: $ =>
       choice(
         seq(
           $.open,
@@ -422,134 +426,98 @@ module.exports = grammar({
         // ),
         // Treesitter/Prolog ISO precedences are inverted.
         // Non-associative operators are set to left-associative
-        $.operation_1200xfx,
-        $.operation_1200fx,
-        $.operation_1100xfy,
-        $.operation_1050xfy,
-        $.operation_1000xfy,
-        $.operation_900fy,
-        $.operation_700xfx,
-        $.operation_500yfx,
-        $.operation_400yfx,
-        $.operation_200xfx,
-        $.operation_200xfy,
-        $.operation_200fy,
-      ),
-    operator_1200xfx: _ => /(:\-)|(\-\->)/,
-    operation_1200xfx: $ =>
-      prec.left(
-        1,
-        seq(
-          $._term,
-          $.operator_1200xfx,
-          $._term,
+        prec.left(
+          1,
+          seq(
+            $._term,
+            field(fields.operator, /(:\-)|(\-\->)/),
+            $._term,
+          ),
         ),
-      ),
-    operator_1200fx: _ => /(:\-)|(\?-)/,
-    operation_1200fx: $ =>
-      prec.left(
-        1,
-        seq(
-          $.operator_1200fx,
-          $._term,
+        prec.left(
+          1,
+          seq(
+            field(fields.operator, /(:\-)|(\?-)/),
+            $._term,
+          ),
         ),
-      ),
-    operator_1100xfy: _ => ";",
-    operation_1100xfy: $ =>
-      prec.right(
-        101,
-        seq(
-          $._term,
-          $.operator_1100xfy,
-          $._term,
+        prec.right(
+          101,
+          seq(
+            $._term,
+            field(fields.operator, ";"),
+            $._term,
+          ),
         ),
-      ),
-    operator_1050xfy: _ => "->",
-    operation_1050xfy: $ =>
-      prec.right(
-        151,
-        seq(
-          $._term,
-          $.operator_1050xfy,
-          $._term,
+        prec.right(
+          151,
+          seq(
+            $._term,
+            field(fields.operator, "->"),
+            $._term,
+          ),
         ),
-      ),
-    operator_1000xfy: $ => choice("`,`", $.comma),
-    operation_1000xfy: $ =>
-      prec.right(
-        201,
-        seq(
-          $._term,
-          $.operator_1000xfy,
-          $._term,
+        prec.right(
+          201,
+          seq(
+            $._term,
+            field(fields.operator, choice("`,`", $.comma)),
+            $._term,
+          ),
         ),
-      ),
-    operator_900fy: _ => "\\+",
-    operation_900fy: $ =>
-      prec.right(
-        301,
-        seq(
-          $.operator_900fy,
-          $._term,
+        prec.right(
+          301,
+          seq(
+            field(fields.operator, "\\+"),
+            $._term,
+          ),
         ),
-      ),
-    operator_700xfx: _ => /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/,
-    operation_700xfx: $ =>
-      prec.left(
-        501,
-        seq(
-          $._term,
-          $.operator_700xfx,
-          $._term,
+        prec.left(
+          501,
+          seq(
+            $._term,
+            field(fields.operator, /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/),
+            $._term,
+          ),
         ),
-      ),
-    operator_500yfx: _ => /\+|\-|\/\\|\\\//,
-    operation_500yfx: $ =>
-      prec.left(
-        701,
-        seq(
-          $._term,
-          $.operator_500yfx,
-          $._term,
+        prec.left(
+          701,
+          seq(
+            $._term,
+            field(fields.operator, /\+|\-|\/\\|\\\//),
+            $._term,
+          ),
         ),
-      ),
-    operator_400yfx: _ => /\*|\/|\/\/|rem|mod|<<|>>/,
-    operation_400yfx: $ =>
-      prec.left(
-        801,
-        seq(
-          $._term,
-          $.operator_400yfx,
-          $._term,
+        prec.left(
+          801,
+          seq(
+            $._term,
+            field(fields.operator, /\*|\/|\/\/|rem|mod|<<|>>/),
+            $._term,
+          ),
         ),
-      ),
-    operator_200xfx: _ => "**",
-    operation_200xfx: $ =>
-      prec.left(
-        1001,
-        seq(
-          $._term,
-          $.operator_200xfx,
-          $._term,
+        prec.left(
+          1001,
+          seq(
+            $._term,
+            field(fields.operator, "**"),
+            $._term,
+          ),
         ),
-      ),
-    operator_200xfy: _ => "^",
-    operation_200xfy: $ =>
-      prec.right(
-        1001,
-        seq(
-          $._term,
-          $.operator_200xfy,
-          $._term,
+        prec.right(
+          1001,
+          seq(
+            $._term,
+            field(fields.operator, "^"),
+            $._term,
+          ),
         ),
-      ),
-    operator_200fy: _ => /\-\\/,
-    operation_200fy: $ =>
-      prec.right(
-        1001,
-        seq(
-          $.operator_200fy,
-          $._term,
+        prec.right(
+          1001,
+          seq(
+            field(fields.operator, /\-\\/),
+            $._term,
+          ),
         ),
       ),
     // 6.3.5 Compound terms - list notation

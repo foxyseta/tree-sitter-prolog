@@ -15,20 +15,10 @@
 
 (float_number) @number.float
 
-[
-  (directive_head)
-  (operator_1200xfx)
-  (operator_1200fx)
-  (operator_1050xfy)
-  (operator_1000xfy)
-  (operator_900fy)
-  (operator_700xfx)
-  (operator_500yfx)
-  (operator_400yfx)
-  (operator_200xfx)
-  (operator_200xfy)
-  (operator_200fy)
-] @operator
+(directive_head) @operator
+
+(operator_notation
+  operator: (_) @operator)
 
 [
  (open)
@@ -46,8 +36,10 @@
  (comma)
  (end)
  (list_notation_separator)
- (operator_1100xfy)
 ] @punctuation.delimiter
+
+(operator_notation
+  operator: (";") @punctuation.delimiter)
 
 (double_quoted_list_notation) @string
 

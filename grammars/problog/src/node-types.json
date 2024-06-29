@@ -16,10 +16,6 @@
           "named": true
         },
         {
-          "type": "close",
-          "named": true
-        },
-        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -44,55 +40,7 @@
           "named": true
         },
         {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
+          "type": "operator_notation",
           "named": true
         },
         {
@@ -149,10 +97,6 @@
           "named": true
         },
         {
-          "type": "close",
-          "named": true
-        },
-        {
           "type": "curly_bracketed_notation",
           "named": true
         },
@@ -181,55 +125,7 @@
           "named": true
         },
         {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
+          "type": "operator_notation",
           "named": true
         },
         {
@@ -253,10 +149,6 @@
       "types": [
         {
           "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
           "named": true
         },
         {
@@ -288,59 +180,11 @@
           "named": true
         },
         {
-          "type": "open",
-          "named": true
-        },
-        {
           "type": "open_curly",
           "named": true
         },
         {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
+          "type": "operator_notation",
           "named": true
         },
         {
@@ -360,10 +204,6 @@
       "types": [
         {
           "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
           "named": true
         },
         {
@@ -399,55 +239,7 @@
           "named": true
         },
         {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
+          "type": "operator_notation",
           "named": true
         },
         {
@@ -542,10 +334,6 @@
           "named": true
         },
         {
-          "type": "close",
-          "named": true
-        },
-        {
           "type": "close_list",
           "named": true
         },
@@ -578,59 +366,11 @@
           "named": true
         },
         {
-          "type": "open",
-          "named": true
-        },
-        {
           "type": "open_list",
           "named": true
         },
         {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
+          "type": "operator_notation",
           "named": true
         },
         {
@@ -666,9 +406,44 @@
     "fields": {}
   },
   {
-    "type": "operation_1000xfy",
+    "type": "operator_notation",
     "named": true,
-    "fields": {},
+    "fields": {
+      "operator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "**",
+            "named": false
+          },
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "\\+",
+            "named": false
+          },
+          {
+            "type": "^",
+            "named": false
+          },
+          {
+            "type": "`,`",
+            "named": false
+          },
+          {
+            "type": "comma",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -710,1207 +485,11 @@
           "named": true
         },
         {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_1000xfy",
+          "type": "operator_notation",
           "named": true
         },
         {
           "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_1050xfy",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_1050xfy",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_1100xfy",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_1100xfy",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_1200fx",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_1200fx",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_1200xfx",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_1200xfx",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_200fy",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_200fy",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_200xfx",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_200xfx",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_200xfy",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_200xfy",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_400yfx",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_400yfx",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_500yfx",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_500yfx",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_700xfx",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_700xfx",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operation_900fy",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "close",
-          "named": true
-        },
-        {
-          "type": "curly_bracketed_notation",
-          "named": true
-        },
-        {
-          "type": "double_quoted_list_notation",
-          "named": true
-        },
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "functional_notation",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "open",
-          "named": true
-        },
-        {
-          "type": "operation_1000xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1050xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1100xfy",
-          "named": true
-        },
-        {
-          "type": "operation_1200fx",
-          "named": true
-        },
-        {
-          "type": "operation_1200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200fy",
-          "named": true
-        },
-        {
-          "type": "operation_200xfx",
-          "named": true
-        },
-        {
-          "type": "operation_200xfy",
-          "named": true
-        },
-        {
-          "type": "operation_400yfx",
-          "named": true
-        },
-        {
-          "type": "operation_500yfx",
-          "named": true
-        },
-        {
-          "type": "operation_700xfx",
-          "named": true
-        },
-        {
-          "type": "operation_900fy",
-          "named": true
-        },
-        {
-          "type": "operator_900fy",
-          "named": true
-        },
-        {
-          "type": "variable_term",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "operator_1000xfy",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "comma",
           "named": true
         }
       ]
@@ -1959,7 +538,27 @@
     "named": false
   },
   {
+    "type": "**",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
     "type": "::",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "\\+",
+    "named": false
+  },
+  {
+    "type": "^",
     "named": false
   },
   {
@@ -2012,50 +611,6 @@
   },
   {
     "type": "open_list",
-    "named": true
-  },
-  {
-    "type": "operator_1050xfy",
-    "named": true
-  },
-  {
-    "type": "operator_1100xfy",
-    "named": true
-  },
-  {
-    "type": "operator_1200fx",
-    "named": true
-  },
-  {
-    "type": "operator_1200xfx",
-    "named": true
-  },
-  {
-    "type": "operator_200fy",
-    "named": true
-  },
-  {
-    "type": "operator_200xfx",
-    "named": true
-  },
-  {
-    "type": "operator_200xfy",
-    "named": true
-  },
-  {
-    "type": "operator_400yfx",
-    "named": true
-  },
-  {
-    "type": "operator_500yfx",
-    "named": true
-  },
-  {
-    "type": "operator_700xfx",
-    "named": true
-  },
-  {
-    "type": "operator_900fy",
     "named": true
   },
   {

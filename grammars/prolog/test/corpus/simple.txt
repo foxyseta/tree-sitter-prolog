@@ -22,9 +22,8 @@ test_predicate:-
 
 (source_file
   (clause_term
-    (operation_1200xfx
+    (operator_notation
       (atom)
-      (operator_1200xfx)
       (atom))
     (end)))
 
@@ -39,9 +38,8 @@ test_dcg-->
 
 (source_file
   (clause_term
-    (operation_1200xfx
+    (operator_notation
       (atom)
-      (operator_1200xfx)
       (atom))
     (end)))
 

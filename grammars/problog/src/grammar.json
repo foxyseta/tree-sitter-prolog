@@ -105,7 +105,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_operator_notation"
+          "name": "operator_notation"
         },
         {
           "type": "SYMBOL",
@@ -718,7 +718,7 @@
         ]
       }
     },
-    "_operator_notation": {
+    "operator_notation": {
       "type": "CHOICE",
       "members": [
         {
@@ -739,351 +739,303 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_1200xfx"
+          "type": "PREC_LEFT",
+          "value": 1,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "(:\\-)|(\\-\\->)"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_1200fx"
+          "type": "PREC_LEFT",
+          "value": 1,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "(:\\-)|(\\?-)"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_1100xfy"
+          "type": "PREC_RIGHT",
+          "value": 101,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "STRING",
+                  "value": ";"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_1050xfy"
+          "type": "PREC_RIGHT",
+          "value": 151,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "STRING",
+                  "value": "->"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_1000xfy"
+          "type": "PREC_RIGHT",
+          "value": 201,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "`,`"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "comma"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_900fy"
+          "type": "PREC_RIGHT",
+          "value": 301,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "STRING",
+                  "value": "\\+"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_700xfx"
+          "type": "PREC_LEFT",
+          "value": 501,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "=|\\\\=|==|\\\\==|@<|@=<|@>|@>=|=\\.\\.|is|=:=|=\\\\=|<|=<|>|>="
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_500yfx"
+          "type": "PREC_LEFT",
+          "value": 701,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "\\+|\\-|\\/\\\\|\\\\\\/"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_400yfx"
+          "type": "PREC_LEFT",
+          "value": 801,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "\\*|\\/|\\/\\/|rem|mod|<<|>>"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_200xfx"
+          "type": "PREC_LEFT",
+          "value": 1001,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "STRING",
+                  "value": "**"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_200xfy"
+          "type": "PREC_RIGHT",
+          "value": 1001,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              },
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "STRING",
+                  "value": "^"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "operation_200fy"
+          "type": "PREC_RIGHT",
+          "value": 1001,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "operator",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "\\-\\\\"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_term"
+              }
+            ]
+          }
         }
       ]
-    },
-    "operator_1200xfx": {
-      "type": "PATTERN",
-      "value": "(:\\-)|(\\-\\->)"
-    },
-    "operation_1200xfx": {
-      "type": "PREC_LEFT",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_1200xfx"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_1200fx": {
-      "type": "PATTERN",
-      "value": "(:\\-)|(\\?-)"
-    },
-    "operation_1200fx": {
-      "type": "PREC_LEFT",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "operator_1200fx"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_1100xfy": {
-      "type": "STRING",
-      "value": ";"
-    },
-    "operation_1100xfy": {
-      "type": "PREC_RIGHT",
-      "value": 101,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_1100xfy"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_1050xfy": {
-      "type": "STRING",
-      "value": "->"
-    },
-    "operation_1050xfy": {
-      "type": "PREC_RIGHT",
-      "value": 151,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_1050xfy"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_1000xfy": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "`,`"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "comma"
-        }
-      ]
-    },
-    "operation_1000xfy": {
-      "type": "PREC_RIGHT",
-      "value": 201,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_1000xfy"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_900fy": {
-      "type": "STRING",
-      "value": "\\+"
-    },
-    "operation_900fy": {
-      "type": "PREC_RIGHT",
-      "value": 301,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "operator_900fy"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_700xfx": {
-      "type": "PATTERN",
-      "value": "=|\\\\=|==|\\\\==|@<|@=<|@>|@>=|=\\.\\.|is|=:=|=\\\\=|<|=<|>|>="
-    },
-    "operation_700xfx": {
-      "type": "PREC_LEFT",
-      "value": 501,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_700xfx"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_500yfx": {
-      "type": "PATTERN",
-      "value": "\\+|\\-|\\/\\\\|\\\\\\/"
-    },
-    "operation_500yfx": {
-      "type": "PREC_LEFT",
-      "value": 701,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_500yfx"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_400yfx": {
-      "type": "PATTERN",
-      "value": "\\*|\\/|\\/\\/|rem|mod|<<|>>"
-    },
-    "operation_400yfx": {
-      "type": "PREC_LEFT",
-      "value": 801,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_400yfx"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_200xfx": {
-      "type": "STRING",
-      "value": "**"
-    },
-    "operation_200xfx": {
-      "type": "PREC_LEFT",
-      "value": 1001,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_200xfx"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_200xfy": {
-      "type": "STRING",
-      "value": "^"
-    },
-    "operation_200xfy": {
-      "type": "PREC_RIGHT",
-      "value": 1001,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "operator_200xfy"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
-    },
-    "operator_200fy": {
-      "type": "PATTERN",
-      "value": "\\-\\\\"
-    },
-    "operation_200fy": {
-      "type": "PREC_RIGHT",
-      "value": 1001,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "operator_200fy"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_term"
-          }
-        ]
-      }
     },
     "list_notation": {
       "type": "SEQ",

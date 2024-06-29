@@ -26,9 +26,8 @@ Clause 2
   (clause_term
     (probability_label
       (integer))
-    (operation_1200xfx
+    (operator_notation
       (atom)
-      (operator_1200xfx)
       (atom))
     (end)))
 
@@ -45,8 +44,7 @@ DCG
   (clause_term
     (probability_label
       (float_number))
-    (operation_1200xfx
+    (operator_notation
       (atom)
-      (operator_1200xfx)
       (atom))
     (end)))
