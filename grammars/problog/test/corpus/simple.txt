@@ -9,8 +9,7 @@ Clause 1
 (source_file
   (clause_term
     (probability_label
-      (probability
-        (float_number)))
+      (float_number))
     (atom)
     (end)))
 
@@ -43,8 +42,7 @@ DCG
 (source_file
   (clause_term
     (probability_label
-      (probability
-        (integer)))
+      (integer))
     (operation_1200xfx
       (atom)
       (operator_1200xfx)
@@ -61,5 +59,6 @@ Directive
 
 (source_file
   (directive_term
+    (directive_head)
     (atom)
     (end)))

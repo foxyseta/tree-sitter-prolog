@@ -1,7 +1,7 @@
 0.2::c. % Hello!
 % <- attribute
 %    ^ constant
-        % <- comment
+        % <- spell
 {
 % <- punctuation.bracket
   [
@@ -10,16 +10,16 @@
     % <- punctuation.bracket
       true,
       % <- boolean
-      %   ^ operator
+      %   ^ punctuation.delimiter
       4,
       % <- number
-       %<- operator
+       %<- punctuation.delimiter
       cat,
       % <- constant
-      %  ^ operator
+      %  ^ punctuation.delimiter
       -0.5e-2,
       % <- number.float
-      %      ^ operator
+      %      ^ punctuation.delimiter
       log
       % <- constant
     }
@@ -28,7 +28,7 @@
   % <- punctuation.bracket
 }. /* Hi
          there! */
-      % ^ comment
+      % ^ spell
 
 0.6::function(a,c,a,b,c).
 % <- attribute

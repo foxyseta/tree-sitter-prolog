@@ -55,5 +55,6 @@ Directive
 
 (source_file
   (directive_term
+    (directive_head)
     (atom)
     (end)))

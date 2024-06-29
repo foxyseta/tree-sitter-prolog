@@ -209,6 +209,13 @@ graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
     named_variable,
   ),
   // 6.4.4 Integer numbers
+  // w.r.t. ISO, sign is now part of the token
+  positive_sign_char = "+",
+  negative_sign_char = "-",
+  sign = choice(
+    negative_sign_char,
+    optional(positive_sign_char),
+  ),
   integer_constant = repeat1(decimal_digit_char),
   character_code_constant = seq(
     "0",
@@ -230,25 +237,23 @@ graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
     hexadecimal_constant_indicator,
     repeat1(hexadecimal_digit_char),
   ),
-  integer_token = choice(
-    integer_constant,
-    character_code_constant,
-    binary_constant,
-    octal_constant,
-    hexadecimal_constant,
+  integer_token = seq(
+    sign,
+    choice(
+      integer_constant,
+      character_code_constant,
+      binary_constant,
+      octal_constant,
+      hexadecimal_constant,
+    ),
   ),
   // 6.4.5 Floating point numbers
-  positive_sign_char = "+",
-  negative_sign_char = "-",
+  // w.r.t. ISO, sign is now part of the token
   decimal_point_char = ".",
   exponent_char = choice("e", "E"),
   fraction = seq(
     decimal_point_char,
     repeat1(decimal_digit_char),
-  ),
-  sign = choice(
-    negative_sign_char,
-    optional(positive_sign_char),
   ),
   exponent = seq(
     exponent_char,
@@ -256,6 +261,7 @@ graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
     integer_constant,
   ),
   float_number_token = seq(
+    sign,
     integer_constant,
     fraction,
     optional(exponent),
@@ -317,9 +323,10 @@ module.exports = grammar({
       ),
     end: _ => token(seq(end_token)),
     // 6.2.1.1 Directives
+    directive_head: _ => ":-",
     directive_term: $ =>
       seq(
-        ":-",
+        $.directive_head,
         $._term,
         $.end,
       ),
@@ -350,27 +357,15 @@ module.exports = grammar({
     // 6.3.1 Atomic terms
     _atomic_term: $ =>
       choice(
-        $.number,
-        $.negative_number,
+        $._number,
         $.atom,
       ),
     // 6.3.1.1 Numbers
-    number: $ =>
-      prec.left(choice(
+    // w.r.t. ISO, sign is now part of the token
+    _number: $ =>
+      choice(
         $.integer,
         $.float_number,
-      )),
-    // 6.3.1.2 Negative numbers
-    negative_number: $ =>
-      prec(
-        200,
-        seq(
-          "-",
-          choice(
-            $.integer,
-            $.float_number,
-          ),
-        ),
       ),
     // 6.3.1.3 Atoms
     atom: $ =>

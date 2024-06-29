@@ -1,4 +1,4 @@
-(comment) @comment
+(comment) @comment @spell
 
 (atom) @constant
 
@@ -11,22 +11,14 @@
 (functional_notation
   function: (atom) @function.call)
 
-[
-  (integer)
-  (negative_number
-    (integer))
-] @number
+(integer) @number
+
+(float_number) @number.float
 
 [
-  (float_number)
-  (negative_number
-    (float_number))
-] @number.float
-
-[
+  (directive_head)
   (operator_1200xfx)
   (operator_1200fx)
-  (operator_1100xfy)
   (operator_1050xfy)
   (operator_1000xfy)
   (operator_900fy)
@@ -43,16 +35,19 @@
  (open_ct)
  (close)
  (open_list)
+ "|"
  (close_list)
  (open_curly)
  (close_curly)
 ] @punctuation.bracket
 
-(arg_list_separator) @punctuation.delimiter
-
-(list_notation_separator) @punctuation.delimiter
-
-(end) @punctuation.delimiter
+[
+ (arg_list_separator)
+ (comma)
+ (end)
+ (list_notation_separator)
+ (operator_1100xfy)
+] @punctuation.delimiter
 
 (double_quoted_list_notation) @string
 

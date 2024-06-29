@@ -28,19 +28,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -165,19 +165,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -268,19 +268,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -367,6 +367,10 @@
           "named": true
         },
         {
+          "type": "directive_head",
+          "named": true
+        },
+        {
           "type": "double_quoted_list_notation",
           "named": true
         },
@@ -375,19 +379,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -550,7 +554,15 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
+          "named": true
+        },
+        {
+          "type": "integer",
           "named": true
         },
         {
@@ -559,14 +571,6 @@
         },
         {
           "type": "list_notation_separator",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -648,44 +652,6 @@
     }
   },
   {
-    "type": "negative_number",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "number",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "float_number",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "open",
     "named": true,
     "fields": {}
@@ -720,19 +686,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -823,19 +789,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -926,19 +892,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1029,19 +995,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1132,19 +1098,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1235,19 +1201,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1338,19 +1304,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1441,19 +1407,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1544,19 +1510,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1647,19 +1613,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1750,19 +1716,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1853,19 +1819,19 @@
           "named": true
         },
         {
+          "type": "float_number",
+          "named": true
+        },
+        {
           "type": "functional_notation",
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
           "type": "list_notation",
-          "named": true
-        },
-        {
-          "type": "negative_number",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -1970,14 +1936,6 @@
     "named": false
   },
   {
-    "type": "-",
-    "named": false
-  },
-  {
-    "type": ":-",
-    "named": false
-  },
-  {
     "type": "`,`",
     "named": false
   },
@@ -1999,6 +1957,10 @@
   },
   {
     "type": "comment",
+    "named": true
+  },
+  {
+    "type": "directive_head",
     "named": true
   },
   {
