@@ -430,14 +430,14 @@ module.exports = grammar({
           1,
           seq(
             $._term,
-            field(fields.operator, /(:\-)|(\-\->)/),
+            field(fields.operator, alias(/(:\-)|(\-\->)/, $.binary_operator)),
             $._term,
           ),
         ),
         prec.left(
           1,
           seq(
-            field(fields.operator, /(:\-)|(\?-)/),
+            field(fields.operator, alias(/(:\-)|(\?-)/, $.prefix_operator)),
             $._term,
           ),
         ),
@@ -445,7 +445,7 @@ module.exports = grammar({
           101,
           seq(
             $._term,
-            field(fields.operator, ";"),
+            field(fields.operator, alias(";", $.semicolon)),
             $._term,
           ),
         ),
@@ -453,7 +453,7 @@ module.exports = grammar({
           151,
           seq(
             $._term,
-            field(fields.operator, "->"),
+            field(fields.operator, alias("->", $.binary_operator)),
             $._term,
           ),
         ),
@@ -461,14 +461,14 @@ module.exports = grammar({
           201,
           seq(
             $._term,
-            field(fields.operator, choice("`,`", $.comma)),
+            field(fields.operator, choice(alias("`,`", $.comma), $.comma)),
             $._term,
           ),
         ),
         prec.right(
           301,
           seq(
-            field(fields.operator, "\\+"),
+            field(fields.operator, alias("\\+", $.prefix_operator)),
             $._term,
           ),
         ),
@@ -476,7 +476,7 @@ module.exports = grammar({
           501,
           seq(
             $._term,
-            field(fields.operator, /=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/),
+            field(fields.operator, alias(/=|\\=|==|\\==|@<|@=<|@>|@>=|=\.\.|is|=:=|=\\=|<|=<|>|>=/, $.binary_operator)),
             $._term,
           ),
         ),
@@ -484,7 +484,7 @@ module.exports = grammar({
           701,
           seq(
             $._term,
-            field(fields.operator, /\+|\-|\/\\|\\\//),
+            field(fields.operator, alias(/\+|\-|\/\\|\\\//, $.binary_operator)),
             $._term,
           ),
         ),
@@ -492,7 +492,7 @@ module.exports = grammar({
           801,
           seq(
             $._term,
-            field(fields.operator, /\*|\/|\/\/|rem|mod|<<|>>/),
+            field(fields.operator, alias(/\*|\/|\/\/|rem|mod|<<|>>/, $.binary_operator)),
             $._term,
           ),
         ),
@@ -500,7 +500,7 @@ module.exports = grammar({
           1001,
           seq(
             $._term,
-            field(fields.operator, "**"),
+            field(fields.operator, alias("**", $.binary_operator)),
             $._term,
           ),
         ),
@@ -508,14 +508,14 @@ module.exports = grammar({
           1001,
           seq(
             $._term,
-            field(fields.operator, "^"),
+            field(fields.operator, alias("^", $.binary_operator)),
             $._term,
           ),
         ),
         prec.right(
           1001,
           seq(
-            field(fields.operator, /\-\\/),
+            field(fields.operator, alias(/\-\\/, $.prexif_operator)),
             $._term,
           ),
         ),

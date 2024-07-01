@@ -26,6 +26,7 @@ test_predicate:-
   (clause_term
     (operator_notation
       (atom)
+      (binary_operator)
       (atom))
     (end)))
 
@@ -44,6 +45,7 @@ DCG
       (integer))
     (operator_notation
       (atom)
+      (binary_operator)
       (atom))
     (end)))
 

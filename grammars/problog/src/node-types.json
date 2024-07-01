@@ -414,31 +414,23 @@
         "required": false,
         "types": [
           {
-            "type": "**",
-            "named": false
-          },
-          {
-            "type": "->",
-            "named": false
-          },
-          {
-            "type": ";",
-            "named": false
-          },
-          {
-            "type": "\\+",
-            "named": false
-          },
-          {
-            "type": "^",
-            "named": false
-          },
-          {
-            "type": "`,`",
-            "named": false
+            "type": "binary_operator",
+            "named": true
           },
           {
             "type": "comma",
+            "named": true
+          },
+          {
+            "type": "prefix_operator",
+            "named": true
+          },
+          {
+            "type": "prexif_operator",
+            "named": true
+          },
+          {
+            "type": "semicolon",
             "named": true
           }
         ]
@@ -538,32 +530,12 @@
     "named": false
   },
   {
-    "type": "**",
-    "named": false
-  },
-  {
-    "type": "->",
-    "named": false
-  },
-  {
     "type": "::",
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
-    "type": "\\+",
-    "named": false
-  },
-  {
-    "type": "^",
-    "named": false
-  },
-  {
-    "type": "`,`",
-    "named": false
+    "type": "binary_operator",
+    "named": true
   },
   {
     "type": "close",
@@ -611,6 +583,18 @@
   },
   {
     "type": "open_list",
+    "named": true
+  },
+  {
+    "type": "prefix_operator",
+    "named": true
+  },
+  {
+    "type": "prexif_operator",
+    "named": true
+  },
+  {
+    "type": "semicolon",
     "named": true
   },
   {

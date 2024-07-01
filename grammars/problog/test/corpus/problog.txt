@@ -28,6 +28,7 @@ Clause 2
       (integer))
     (operator_notation
       (atom)
+      (binary_operator)
       (atom))
     (end)))
 
@@ -46,5 +47,6 @@ DCG
       (float_number))
     (operator_notation
       (atom)
+      (binary_operator)
       (atom))
     (end)))

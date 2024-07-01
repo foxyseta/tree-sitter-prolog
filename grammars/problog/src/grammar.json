@@ -752,8 +752,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "PATTERN",
-                  "value": "(:\\-)|(\\-\\->)"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "(:\\-)|(\\-\\->)"
+                  },
+                  "named": true,
+                  "value": "binary_operator"
                 }
               },
               {
@@ -773,8 +778,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "PATTERN",
-                  "value": "(:\\-)|(\\?-)"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "(:\\-)|(\\?-)"
+                  },
+                  "named": true,
+                  "value": "prefix_operator"
                 }
               },
               {
@@ -798,8 +808,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": ";"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": ";"
+                  },
+                  "named": true,
+                  "value": "semicolon"
                 }
               },
               {
@@ -823,8 +838,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "->"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "->"
+                  },
+                  "named": true,
+                  "value": "binary_operator"
                 }
               },
               {
@@ -851,8 +871,13 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "STRING",
-                      "value": "`,`"
+                      "type": "ALIAS",
+                      "content": {
+                        "type": "STRING",
+                        "value": "`,`"
+                      },
+                      "named": true,
+                      "value": "comma"
                     },
                     {
                       "type": "SYMBOL",
@@ -878,8 +903,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "\\+"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "\\+"
+                  },
+                  "named": true,
+                  "value": "prefix_operator"
                 }
               },
               {
@@ -903,8 +933,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "PATTERN",
-                  "value": "=|\\\\=|==|\\\\==|@<|@=<|@>|@>=|=\\.\\.|is|=:=|=\\\\=|<|=<|>|>="
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "=|\\\\=|==|\\\\==|@<|@=<|@>|@>=|=\\.\\.|is|=:=|=\\\\=|<|=<|>|>="
+                  },
+                  "named": true,
+                  "value": "binary_operator"
                 }
               },
               {
@@ -928,8 +963,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "PATTERN",
-                  "value": "\\+|\\-|\\/\\\\|\\\\\\/"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "\\+|\\-|\\/\\\\|\\\\\\/"
+                  },
+                  "named": true,
+                  "value": "binary_operator"
                 }
               },
               {
@@ -953,8 +993,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "PATTERN",
-                  "value": "\\*|\\/|\\/\\/|rem|mod|<<|>>"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "\\*|\\/|\\/\\/|rem|mod|<<|>>"
+                  },
+                  "named": true,
+                  "value": "binary_operator"
                 }
               },
               {
@@ -978,8 +1023,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "**"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "**"
+                  },
+                  "named": true,
+                  "value": "binary_operator"
                 }
               },
               {
@@ -1003,8 +1053,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "STRING",
-                  "value": "^"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "^"
+                  },
+                  "named": true,
+                  "value": "binary_operator"
                 }
               },
               {
@@ -1024,8 +1079,13 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "PATTERN",
-                  "value": "\\-\\\\"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "\\-\\\\"
+                  },
+                  "named": true,
+                  "value": "prexif_operator"
                 }
               },
               {
