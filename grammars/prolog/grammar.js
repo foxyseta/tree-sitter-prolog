@@ -9,7 +9,7 @@ const fields = {
     operator: "operator",
   },
   // 6.5.1 Graphic character
-  graphic_char = choice(/#\$\&\*\+-\.\/:<=>\?@\^~/),
+  graphic_char = /[#\$\&\*\+-\.\/:<=>\?@\^~]/,
   // 6.5.2 Alphanumeric characters
   small_letter_char = /[a-z]/,
   capital_letter_char = /[A-Z]/,

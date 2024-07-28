@@ -58,3 +58,24 @@ Directive
     (directive_head)
     (atom)
     (end)))
+
+====================
+Strings
+====================
+
+test(a, "a-b && c").
+
+---
+
+(source_file
+  (clause_term
+    (functional_notation
+      (atom)
+      (open_ct)
+      (arg_list
+        (atom)
+        (arg_list_separator
+          (comma))
+        (double_quoted_list_notation))
+      (close))
+    (end)))

@@ -204,13 +204,8 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "PATTERN",
-                          "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
-                        }
-                      ]
+                      "type": "PATTERN",
+                      "value": "[#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~]"
                     },
                     {
                       "type": "STRING",
@@ -238,13 +233,8 @@
                               "type": "CHOICE",
                               "members": [
                                 {
-                                  "type": "CHOICE",
-                                  "members": [
-                                    {
-                                      "type": "PATTERN",
-                                      "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
-                                    }
-                                  ]
+                                  "type": "PATTERN",
+                                  "value": "[#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~]"
                                 },
                                 {
                                   "type": "CHOICE",
@@ -1210,13 +1200,8 @@
                       "type": "CHOICE",
                       "members": [
                         {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "PATTERN",
-                              "value": "#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~"
-                            }
-                          ]
+                          "type": "PATTERN",
+                          "value": "[#\\$\\&\\*\\+-\\.\\/:<=>\\?@\\^~]"
                         },
                         {
                           "type": "CHOICE",
