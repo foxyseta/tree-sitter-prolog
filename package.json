@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-prolog",
-  "version": "1.0.0",
+  "version": "3.0.2",
   "description": "Tree-sitter grammar for ISO Prolog",
   "keywords": [
     "incremental",

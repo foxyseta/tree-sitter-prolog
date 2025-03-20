@@ -29,7 +29,7 @@
     }
   ],
   "metadata": {
-    "version": "1.0.0",
+    "version": "3.0.2",
     "license": "AGPL-3.0-or-later",
     "description": "Tree-sitter grammar for ISO Prolog",
     "authors": [
