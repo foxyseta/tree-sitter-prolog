@@ -21,13 +21,8 @@
     "end": {
       "type": "TOKEN",
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "."
-          }
-        ]
+        "type": "STRING",
+        "value": "."
       }
     },
     "directive_head": {
@@ -1799,6 +1794,5 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": [],
-  "reserved": {}
+  "supertypes": []
 }

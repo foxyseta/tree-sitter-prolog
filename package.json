@@ -18,57 +18,27 @@
   "scripts": {
     "install": "node-gyp-build",
     "build": "pnpm run build-prolog && pnpm run build-problog",
-    "build-prolog": "cd grammars/prolog && tree-sitter generate --no-bindings && prebuildify --napi --electron-compat",
-    "build-problog": "cd grammars/problog && tree-sitter generate --no-bindings && prebuildify --napi --electron-compat",
+    "build-prolog": "cd grammars/prolog && tree-sitter generate && prebuildify --napi --electron-compat",
+    "build-problog": "cd grammars/problog && tree-sitter generate && prebuildify --napi --electron-compat",
     "test": "pnpm run test-prolog && pnpm run test-problog && pnpm run test-highlight",
     "test-highlight": "tree-sitter test",
-    "test-prolog": "cd grammars/prolog && tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
     "test-prolog": "cd grammars/problog && tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
     "prebuildify": "prebuildify --napi --strip"
   },
   "author": "foxy@teapot.ovh",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "node-addon-api": "^7.1.0",
-    "node-gyp": "^10.1.0",
-    "node-gyp-build": "^4.8.1"
+    "node-addon-api": "^7.1.1",
+    "node-gyp": "^10.3.1",
+    "node-gyp-build": "^4.8.4"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.21.0"
+    "tree-sitter": "^0.22.4"
   },
   "peerDependenciesMeta": {
     "tree_sitter": {
       "optional": true
     }
-  },
-  "tree-sitter": [
-    {
-      "scope": "source.prolog",
-      "path": "grammars/prolog",
-      "file-types": [
-        "pl",
-        "pro",
-        "P"
-      ],
-      "injection-regex": "prolog",
-      "highlights": "grammars/prolog/queries/highlights.scm"
-    },
-    {
-      "scope": "source.problog",
-      "path": "grammars/problog",
-      "file-types": [
-        "pl",
-        "pro",
-        "P"
-      ],
-      "content-regex": "::",
-      "injection-regex": "problog",
-      "highlights": "grammars/problog/queries/highlights.scm"
-    }
-  ],
-  "devDependencies": {
-    "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.20.8"
   },
   "files": [
     "binding.gyp",
@@ -76,5 +46,14 @@
     "bindings/node/*",
     "grammars/**",
     "queries/*"
-  ]
+  ],
+  "devDependencies": {
+    "prebuildify": "^6.0.1",
+    "tree-sitter-cli": "^0.24.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "tree-sitter-cli"
+    ]
+  }
 }

@@ -329,7 +329,7 @@ module.exports = grammar({
           $.clause_term,
         ),
       ),
-    end: _ => token(seq(end_token)),
+    end: _ => token(end_token),
     // 6.2.1.1 Directives
     directive_head: _ => ":-",
     directive_term: $ =>

@@ -1,0 +1,52 @@
+{
+  "grammars": [
+    {
+      "name": "prolog",
+      "camelcase": "Prolog",
+      "scope": "source.prolog",
+      "path": "grammars/prolog",
+      "file-types": [
+        "pl",
+        "pro",
+        "P"
+      ],
+      "highlights": "grammars/prolog/queries/highlights.scm",
+      "injection-regex": "prolog"
+    },
+    {
+      "name": "problog",
+      "camelcase": "Problog",
+      "scope": "source.problog",
+      "path": "grammars/problog",
+      "file-types": [
+        "pl",
+        "pro",
+        "P"
+      ],
+      "highlights": "grammars/problog/queries/highlights.scm",
+      "injection-regex": "problog",
+      "content-regex": "::"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "AGPL-3.0-or-later",
+    "description": "Tree-sitter grammar for ISO Prolog",
+    "authors": [
+      {
+        "name": "foxy@teapot.ovh"
+      }
+    ],
+    "links": {
+      "repository": "https://codeberg.org/tree-sitter-prolog.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
