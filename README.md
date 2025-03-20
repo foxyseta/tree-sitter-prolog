@@ -2,17 +2,18 @@
 
 [![status-badge](https://ci.codeberg.org/api/badges/13456/status.svg)](https://ci.codeberg.org/repos/13456)
 
-Prolog grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
+Prolog grammar for [Tree-sitter](https://github.com/tree-sitter/tree-sitter).
 The ["References" section](#references) lists the various extensions that
 currently have their own grammar besides ISO Prolog.
 
 Feel free to contribute with new ones! It is super easy, as you can just extend
-an existing one.
+an existing one. See `.woodpecker.yml` for the current version of Tree-sitter
+we are testing against.
 
 ## Project structure
 
-The project uses pnpm as its package manager. Files `package.json` and
-`pnpm-lock.yaml` can be found in the root folder.
+The project uses pnpm as its package manager. Files `package.json`,
+`tree-sitter.json`, and `pnpm-lock.yaml` can be found in the root folder.
 
 ### Grammars
 
@@ -26,12 +27,6 @@ Parser sources for a Prolog extension `xxx` are located at `grammars/xxx/src/`.
 If you are not using the `build*` pnpm scripts and are manually invoking the
 `tree-sitter generate` command instead, make sure your current directory is
 `grammars/xxx/`.
-
-> [!WARNING]
-> When updating parser sources with `tree-sitter generate`, use the
-> `--no-bindings` flag. Tree-sitter is currently unable to generate correct
-> bindings for repositories with more than one grammar. The `build*` pnpm
-> scripts will always use such flag.
 
 ### Queries
 
