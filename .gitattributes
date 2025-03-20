@@ -1,5 +1,7 @@
 * text eol=lf
 
+*.pl linguist-language=Prolog
+
 grammars/*/src/**/* linguist-generated -linguist-detectable
 
 bindings/** linguist-generated -linguist-detectable
