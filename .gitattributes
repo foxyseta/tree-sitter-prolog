@@ -1,8 +1,6 @@
 * text eol=lf
 
-grammars/*/src/*.json linguist-generated
-grammars/*/src/parser.c linguist-generated
-grammars/*src/tree_sitter/* linguist-generated
+grammars/*/src/**/* linguist-generated
 
 bindings/** linguist-generated
 binding.gyp linguist-generated
