@@ -1,9 +1,9 @@
 * text eol=lf
 
-grammars/*/src/**/* linguist-generated
+grammars/*/src/**/* linguist-generated -linguist-detectable
 
-bindings/** linguist-generated
-binding.gyp linguist-generated
-setup.py linguist-generated
-Makefile linguist-generated
-Package.swift linguist-generated
+bindings/** linguist-generated -linguist-detectable
+binding.gyp linguist-generated -linguist-detectable
+setup.py linguist-generated -linguist-detectable
+Makefile linguist-generated -linguist-detectable
+Package.swift linguist-generated -linguist-detectable
