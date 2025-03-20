@@ -59,7 +59,7 @@ const fields = {
   space_char = " ",
   horizontal_tab_char = "\t",
   new_line_char = "\n",
-  /* resonable assumption: there are no NULL characters within the file. Use
+  /* reasonable assumption: there are no NULL characters within the file. Use
    * eof() instead once https://github.com/tree-sitter/tree-sitter/pull/2488 is
    * in production (tree-sitter v0.23). The ISO specification does not deal with
    * these, as it does not accept single line comments on the last line.
@@ -543,7 +543,7 @@ module.exports = grammar({
         seq($._arg, ht_sep, $._arg),
       ),
     list_notation_separator: $ => $.comma,
-    // 6.3.6 Compount terms - curly bracketed forms
+    // 6.3.6 Compound terms - curly bracketed forms
     curly_bracketed_notation: $ =>
       seq(
         $.open_curly,
