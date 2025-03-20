@@ -19,9 +19,9 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
     exports["prolog"] = prolog_exports;
 
     auto problog_exports = Napi::Object::New(env);
-    interface_exports["name"] = Napi::String::New(env, "problog");
+    problog_exports["name"] = Napi::String::New(env, "problog");
     auto problog_language = Napi::External<TSLanguage>::New(env, tree_sitter_problog());
-    interface_language.TypeTag(&LANGUAGE_TYPE_TAG);
+    problog_language.TypeTag(&LANGUAGE_TYPE_TAG);
     problog_exports["language"] = problog_language;
     exports["problog"] = problog_exports;
 

@@ -1,5 +1,7 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "problog",
+  "inherits": "prolog",
   "rules": {
     "source_file": {
       "type": "REPEAT",
@@ -20,13 +22,8 @@
     "end": {
       "type": "TOKEN",
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "."
-          }
-        ]
+        "type": "STRING",
+        "value": "."
       }
     },
     "directive_head": {

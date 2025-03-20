@@ -5,7 +5,7 @@ steps:
         branch: main
       - event: pull_request
         branch: main
-    image: codeberg.org/foxy/tree-sitter:0.2.0
+    image: codeberg.org/foxy/tree-sitter:0.24.4-r0
     commands:
       - tree-sitter init-config
       # ISO Prolog
