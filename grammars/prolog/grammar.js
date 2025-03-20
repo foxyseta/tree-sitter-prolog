@@ -88,7 +88,11 @@ const fields = {
     /.*/,
     choice(new_line_char, end_of_file_char),
   ),
-  bracketed_comment = /\/\*(.|\n)*\*\//,
+  bracketed_comment = seq(
+    '/*',
+    /[^*]*\*+([^/*][^*]*\*+)*/,
+    '/',
+  ),
   // 6.4.2.1 Quoted characters
   meta_escape_sequence = seq(
     backslash_char,
