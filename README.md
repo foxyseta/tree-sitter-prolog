@@ -24,7 +24,7 @@ A `grammar.js` file for a Prolog extension `xxx` is located at
 ### Parsers
 
 Parser sources for a Prolog extension `xxx` are located at `grammars/xxx/src/`.
-If you are not using the `build*` pnpm scripts and are manually invoking the
+If you are not using the `generate` pnpm script and are manually invoking the
 `tree-sitter generate` command instead, make sure your current directory is
 `grammars/xxx/`.
 

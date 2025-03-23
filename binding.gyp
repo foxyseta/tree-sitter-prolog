@@ -12,7 +12,6 @@
         "bindings/node/binding.cc",
         "grammars/prolog/src/parser.c",
         "grammars/problog/src/parser.c",
-        # NOTE: if your language has an external scanner, add it here.
       ],
       "conditions": [
         ["OS!='win'", {

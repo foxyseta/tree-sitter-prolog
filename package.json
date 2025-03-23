@@ -17,19 +17,17 @@
   "types": "bindings/node",
   "scripts": {
     "install": "node-gyp-build",
-    "build": "pnpm run build-prolog && pnpm run build-problog",
-    "build-prolog": "cd grammars/prolog && tree-sitter generate && prebuildify --napi --electron-compat",
-    "build-problog": "cd grammars/problog && tree-sitter generate && prebuildify --napi --electron-compat",
-    "test": "pnpm run test-prolog && pnpm run test-problog && pnpm run test-highlight",
-    "test-highlight": "tree-sitter test",
-    "test-prolog": "cd grammars/problog && tree-sitter test && tree-sitter parse examples/*.pl --quiet --time",
-    "prebuildify": "prebuildify --napi --strip"
+    "lint": "eslint grammars/*/grammar.js",
+    "generate": "for dir in grammars/ocaml grammars/interface grammars/type; do cd $dir; tree-sitter generate; cd -; done",
+    "prestart": "tree-sitter build grammars/ocaml --wasm -o grammars/ocaml/tree-sitter-ocaml.wasm",
+    "start": "tree-sitter playground --grammar-path grammars/ocaml",
+    "test": "node --test bindings/node/*_test.js",
+    "parse-examples": "test/parse-examples.sh"
   },
   "author": "foxy@teapot.ovh",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "node-addon-api": "^7.1.1",
-    "node-gyp": "^10.3.1",
+    "node-addon-api": "^8.3.0",
     "node-gyp-build": "^4.8.4"
   },
   "peerDependencies": {
@@ -42,14 +40,19 @@
   },
   "files": [
     "binding.gyp",
-    "prebuilds/**",
     "bindings/node/*",
-    "grammars/**",
-    "queries/*"
+    "common/**",
+    "grammars/ocaml/src/**",
+    "grammars/interface/src/**",
+    "grammars/type/src/**",
+    "prebuilds/**",
+    "queries/*",
+    "*.wasm"
   ],
   "devDependencies": {
+    "eslint-config-treesitter": "^1.0.2",
     "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.24.7"
+    "tree-sitter-cli": "^0.24.6"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

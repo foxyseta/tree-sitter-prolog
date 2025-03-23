@@ -1,15 +1,17 @@
 [package]
 name = "tree-sitter-prolog"
 description = "Prolog grammar for the tree-sitter parsing library"
-version = "0.0.1"
+version = "3.0.2"
 keywords = ["incremental", "parsing", "prolog"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/Rukiza/tree-sitter-prolog"
-edition = "2018"
-license = "MIT"
+repository = "https://codeberg.org/foxy/tree-sitter-prolog"
+edition = "2021"
+autoexamples = false
+license = "AGPL-3.0"
 
 build = "bindings/rust/build.rs"
 include = [
+  "LICENSE",
   "bindings/rust/*",
   "grammars/*/grammar.js",
   "grammars/*/queries/*",
@@ -20,7 +22,10 @@ include = [
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "0.17"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "0.24"

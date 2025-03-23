@@ -34,19 +34,13 @@
     "description": "Tree-sitter grammar for ISO Prolog",
     "authors": [
       {
-        "name": "foxy@teapot.ovh"
+        "name": "Stefano Volpe",
+        "email": "foxy@teapot.ovh",
+        "url": "https://foxy.codeberg.page"
       }
     ],
     "links": {
-      "repository": "https://codeberg.org/tree-sitter-prolog.git"
+      "repository": "https://codeberg.org/foxy/tree-sitter-prolog.git"
     }
-  },
-  "bindings": {
-    "c": true,
-    "go": true,
-    "node": true,
-    "python": true,
-    "rust": true,
-    "swift": true
   }
 }
